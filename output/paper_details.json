@@ -1,0 +1,1050 @@
+{
+  "A_10-Bit_600-MS_s_Time-Interleaved_SAR_ADC_With_Interpolation-Based_Timing_Skew_Calibration.pdf": {
+    "title": "A 10-Bit 600-MS/s Time-Interleaved SAR ADC With Interpolation-Based Timing Skew Calibration",
+    "authors": [
+      "Dengquan Li",
+      "Zhangming Zhu",
+      "Ruixue Ding",
+      "Maliang Liu",
+      "Yintang Yang",
+      "Nan Sun"
+    ],
+    "affiliations": [],
+    "abstract": "This brief presents a 10-bit 600 MS/s 4-channel time-interleaved (TI) successive approximation register analog-to-digital converter (ADC). A background calibration algorithm using Lagrange polynomial interpolation is introduced to calibrate timing skew. It consists of digital detection and adaptive derivative-based correction, employing low filter taps and resulting in hardware reduction. Two reference voltage generators are implemented on-chip to provide a stable reference voltage for the sub-ADCs, enhancing the reliability and robustness of the circuits. The TI-ADC prototype is fabricated in the 65-nm CMOS process and occupies an area of 0.69 mm\u00b2. The measurement results show that at a sampling rate of 600 MS/s the ADC achieves a 49-dB SNDR after calibration while dissipating 34 mW from a 1.2/2.5-V supply.",
+    "references": [
+      {
+        "ref_title": "All-digital calibration of timing skews for TIADCs using the polyphase decomposition",
+        "ref_authors": [
+          "H. L. Duc et al."
+        ],
+        "ref_year": "2016",
+        "ref_venue": "IEEE Trans. Circuits Syst. II, Exp. Briefs",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+        "download_timestamp": "2025-05-27 23:49:14",
+        "found_doi": "10.1109/tcsii.2015.2483423"
+      },
+      {
+        "ref_title": "A 1.4-mW 10-bit 150-MS/s SAR ADC with nonbinary split capacitive DAC in 65 nm CMOS",
+        "ref_authors": [
+          "D. Li",
+          "Z. Zhu",
+          "R. Ding",
+          "Y. Yang"
+        ],
+        "ref_year": "2017",
+        "ref_venue": "IEEE Trans. Circuits Syst. II, Exp. Briefs",
+        "download_path": "output/downloads/A_1.4-mW_10-bit_150-MSs_SAR_ADC_With_Nonbinary_Split_Capacitive_DAC_in_65_nm_10.1109_tcsii.2017.2756036.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-27 23:51:13",
+        "found_doi": "10.1109/tcsii.2017.2756036"
+      },
+      {
+        "ref_title": "A four-channel time-interleaved ADC with digital calibration of interchannel timing and memory errors",
+        "ref_authors": [
+          "C. H. Law",
+          "P. J. Hurst",
+          "S. H. Lewis"
+        ],
+        "ref_year": "2010",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/A_Four-Channel_Time-Interleaved_ADC_With_Digital_Calibration_of_Interchannel_Timing_and_Memory_Error_10.1109_jssc.2010.2061630.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-27 23:52:20",
+        "found_doi": "10.1109/jssc.2010.2061630"
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:46:17",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 9075,
+      "input_text_preview": "16\nIEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS\u2014II: EXPRESS BRIEFS, VOL. 66, NO. 1, JANUARY 2019\nA 10-Bit 600-MS/s Time-Interleaved SAR ADC\nWith Interpolation-Based Timing Skew Calibration\nDengquan Li\n, Zhangming Zhu\n, Ruixue Ding, Maliang Liu, Yintang Yang\n,\nand Nan Sun, Senior Member, IEEE\nAbstract\u2014This brief presents a 10-bit 600 MS/s 4-channel\ntime-interleaved (TI) successive approximation register analog-\nto-digital converter (ADC). A background calibration algorithm\nusing Lagrange polynomial ...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 151.31,
+      "completion_tokens": 4670,
+      "prompt_tokens": 3091,
+      "total_tokens": 7761,
+      "response_full": "\n\n{\n  \"title\": \"A 10-Bit 600-MS/s Time-Interleaved SAR ADC With Interpolation-Based Timing Skew Calibration\",\n  \"authors\": [\"Dengquan Li\", \"Zhangming Zhu\", \"Ruixue Ding\", \"Maliang Liu\", \"Yintang Yang\", \"Nan Sun\"],\n  \"affiliations\": [],\n  \"abstract\": \"This brief presents a 10-bit 600 MS/s 4-channel time-interleaved (TI) successive approximation register analog-to-digital converter (ADC). A background calibration algorithm using Lagrange polynomial interpolation is introduced to calibrate timing skew. It consists of digital detection and adaptive derivative-based correction, employing low filter taps and resulting in hardware reduction. Two reference voltage generators are implemented on-chip to provide a stable reference voltage for the sub-ADCs, enhancing the reliability and robustness of the circuits. The TI-ADC prototype is fabricated in the 65-nm CMOS process and occupies an area of 0.69 mm\u00b2. The measurement results show that at a sampling rate of 600 MS/s the ADC achieves a 49-dB SNDR after calibration while dissipating 34 mW from a 1.2/2.5-V supply.\",\n  \"references\": [\n    {\n      \"ref_title\": \"All-digital calibration of timing skews for TIADCs using the polyphase decomposition\",\n      \"ref_authors\": [\"H. L. Duc et al.\"],\n      \"ref_year\": \"2016\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. II, Exp. Briefs\"\n    },\n    {\n      \"ref_title\": \"A 1.4-mW 10-bit 150-MS/s SAR ADC with nonbinary split capacitive DAC in 65 nm CMOS\",\n      \"ref_authors\": [\"D. Li\", \"Z. Zhu\", \"R. Ding\", \"Y. Yang\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. II, Exp. Briefs\"\n    },\n    {\n      \"ref_title\": \"A four-channel time-interleaved ADC with digital calibration of interchannel timing and memory errors\",\n      \"ref_authors\": [\"C. H. Law\", \"P. J. Hurst\", \"S. H. Lewis\"],\n      \"ref_year\": \"2010\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 40-mW 7-bit 2.2-GS/s time-interleaved subranging CMOS ADC for low-power gigabit wireless communications\",\n      \"ref_authors\": [\"I.-N. Ku et al.\"],\n      \"ref_year\": \"2012\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 1 GS/s 10b 18.9 mW time-interleaved SAR ADC with background timing skew calibration\",\n      \"ref_authors\": [\"S. Lee\", \"A. P. Chandrakasan\", \"H.-S. Lee\"],\n      \"ref_year\": \"2014\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 10-bit 1GS/s 4-way TI SAR ADC with tap-interpolated FIR filter based time skew calibration\",\n      \"ref_authors\": [\"L. Qiu et al.\"],\n      \"ref_year\": \"2016\",\n      \"ref_venue\": \"Proc. IEEE Asian Solid-State Circuits Conf. (ASSCC)\"\n    },\n    {\n      \"ref_title\": \"An 8 bit 4 GS/s 120 mW CMOS ADC\",\n      \"ref_authors\": [\"H. Wei\", \"P. Zhang\", \"B. D. Sahoo\", \"B. Razavi\"],\n      \"ref_year\": \"2014\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"All-digital calibration of timing mismatch error in time-interleaved analog-to-digital converters\",\n      \"ref_authors\": [\"S. Chen et al.\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE Trans. Very Large Scale Integr. (VLSI) Syst.\"\n    },\n    {\n      \"ref_title\": \"Blind calibration of timing skew in time-interleaved analog-to-digital converters\",\n      \"ref_authors\": [\"V. Divi\", \"G. W. Wornell\"],\n      \"ref_year\": \"2009\",\n      \"ref_venue\": \"IEEE J. Sel. Topics Signal Process.\"\n    },\n    {\n      \"ref_title\": \"22.5 A 1.62GS/s time-interleaved SAR ADC with digital background mismatch calibration achieving interleaving spurs below 70dBFS\",\n      \"ref_authors\": [\"N. Le Dortz et al.\"],\n      \"ref_year\": \"2014\",\n      \"ref_venue\": \"IEEE ISSCC Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"A 10-b 800MS/s time-interleaved SAR ADC with fast timing-skew calibration\",\n      \"ref_authors\": [\"J. Song\", \"K. Ragab\", \"X. Tang\", \"N. Sun\"],\n      \"ref_year\": \"2016\",\n      \"ref_venue\": \"Proc. IEEE Asian Solid-State Circuits Conf. (ASSCC)\"\n    },\n    {\n      \"ref_title\": \"A 12.5-fJ/conversion-step 8-bit 800-MS/s two-step SAR ADC\",\n      \"ref_authors\": [\"Y.-S. Hu\", \"P.-C. Huang\", \"H.-Y. Tai\", \"H.-S. Chen\"],\n      \"ref_year\": \"2016\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. II, Exp. Briefs\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 10-Bit 600-MS/s Time-Interleaved SAR ADC With Interpolation-Based Timing Skew Calibration\",\n  \"authors\": [\"Dengquan Li\", \"Zhangming Zhu\", \"Ruixue Ding\", \"Maliang Liu\", \"Yintang Yang\", \"Nan Sun\"],\n  \"affiliations\": [],\n  \"abstract\": \"This brief presents a 10-bit 600 MS/s 4-channel time-interleaved (TI) successive approximation register analog-to-digital converter (ADC). A background calibration algorithm using Lagrange polynomial interpolation is introduced to calibrate timing s...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_10-Bit_600-MS_s_Time-Interleaved_SAR_ADC_With_Interpolation-Based_Timing_Skew_Calibration.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:48:48"
+  },
+  "A_0.8_ps_DNL_Time-to-Digital_Converter_With_250_MHz_Event_Rate_in_65_nm_CMOS_for_Time-Mode-Based_Sigma_Delta_Modulator.pdf": {
+    "title": "A 0.8 ps DNL Time-to-Digital Converter With 250 MHz Event Rate in 65 nm CMOS for Time-Mode-Based Modulator",
+    "authors": [
+      "Mohamed M. Elsayed",
+      "Vijay Dhanasekaran",
+      "Manisha Gambhir",
+      "Jose Silva-Martinez",
+      "Edgar S\u00e1nchez-Sinencio"
+    ],
+    "affiliations": [
+      "Analog and Mixed-Signal Center, Texas A&M University, College Station, TX 77843 USA"
+    ],
+    "abstract": "A time-to-digital converter (TDC) is proposed to replace the multi-bit quantizer and the multi-bit feedback DAC of traditional voltage-mode modulator. Since time-mode systems process analog signals encoded in the time dimension rather than the voltage dimension, the proposed time-mode TDC makes the multi-bit ADC digital friendly and more suitable for nanometric technologies. A pulse-width-modulator (PWM) converts the sampled-and-held voltage-sample to a digital pulse whose width is proportional to the voltage level of the sample. Then, the TDC generates a digital code that corresponds to the pulse width. Simultaneously, the TDC provides a time-quantized feedback pulse for the modulator, emulating the voltage-DAC in a conventional ADC. Linearity, jitter and data-dependent-delay effects on the performance of the proposed architecture are analyzed. A chip prototype is fabricated in TI 65 nm digital CMOS process. THD of 67 dB is achieved which corresponds to a TDC\u2019s DNL of less than 0.8 ps without calibration. Measurements show that the modulator achieves a dynamic range of 68 dB and the TDC consumes 5.66 mW at 250 MHz event rate while occupying 0.006 mm .",
+    "references": [],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:46:17",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 21558,
+      "input_text_preview": "2084\nIEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 46, NO. 9, SEPTEMBER 2011\nA 0.8 ps DNL Time-to-Digital Converter With\n250 MHz Event Rate in 65 nm CMOS for\nTime-Mode-Based\nModulator\nMohamed M. Elsayed, Student Member, IEEE, Vijay Dhanasekaran, Member, IEEE,\nManisha Gambhir, Member, IEEE, Jose Silva-Martinez, Fellow, IEEE, and\nEdgar S\u00e1nchez-Sinencio, Life Fellow, IEEE\nAbstract\u2014A time-to-digital converter (TDC) is proposed to re-\nplace the multi-bit quantizer and the multi-bit feedback DAC of\ntradi...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 175.78,
+      "completion_tokens": 2044,
+      "prompt_tokens": 2874,
+      "total_tokens": 4918,
+      "response_full": "\n\n{\n  \"title\": \"A 0.8 ps DNL Time-to-Digital Converter With 250 MHz Event Rate in 65 nm CMOS for Time-Mode-Based Modulator\",\n  \"authors\": [\n    \"Mohamed M. Elsayed\",\n    \"Vijay Dhanasekaran\",\n    \"Manisha Gambhir\",\n    \"Jose Silva-Martinez\",\n    \"Edgar S\u00e1nchez-Sinencio\"\n  ],\n  \"affiliations\": [\n    \"Analog and Mixed-Signal Center, Texas A&M University, College Station, TX 77843 USA\"\n  ],\n  \"abstract\": \"A time-to-digital converter (TDC) is proposed to replace the multi-bit quantizer and the multi-bit feedback DAC of traditional voltage-mode modulator. Since time-mode systems process analog signals encoded in the time dimension rather than the voltage dimension, the proposed time-mode TDC makes the multi-bit ADC digital friendly and more suitable for nanometric technologies. A pulse-width-modulator (PWM) converts the sampled-and-held voltage-sample to a digital pulse whose width is proportional to the voltage level of the sample. Then, the TDC generates a digital code that corresponds to the pulse width. Simultaneously, the TDC provides a time-quantized feedback pulse for the modulator, emulating the voltage-DAC in a conventional ADC. Linearity, jitter and data-dependent-delay effects on the performance of the proposed architecture are analyzed. A chip prototype is fabricated in TI 65 nm digital CMOS process. THD of 67 dB is achieved which corresponds to a TDC\u2019s DNL of less than 0.8 ps without calibration. Measurements show that the modulator achieves a dynamic range of 68 dB and the TDC consumes 5.66 mW at 250 MHz event rate while occupying 0.006 mm .\",\n  \"references\": []\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 0.8 ps DNL Time-to-Digital Converter With 250 MHz Event Rate in 65 nm CMOS for Time-Mode-Based Modulator\",\n  \"authors\": [\n    \"Mohamed M. Elsayed\",\n    \"Vijay Dhanasekaran\",\n    \"Manisha Gambhir\",\n    \"Jose Silva-Martinez\",\n    \"Edgar S\u00e1nchez-Sinencio\"\n  ],\n  \"affiliations\": [\n    \"Analog and Mixed-Signal Center, Texas A&M University, College Station, TX 77843 USA\"\n  ],\n  \"abstract\": \"A time-to-digital converter (TDC) is proposed to replace the multi-bit quantizer and the multi...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_0.8_ps_DNL_Time-to-Digital_Converter_With_250_MHz_Event_Rate_in_65_nm_CMOS_for_Time-Mode-Based_Sigma_Delta_Modulator.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:49:13"
+  },
+  "A_160-MHz_BW_68-dB_SNDR_36.2_mW_Continuous-Time_Pipelined_DeltaSigma_ADC_With_DAC_Image_Prefiltering.pdf": {
+    "title": "A 160-MHz BW 68-dB SNDR 36.2 mW Continuous-Time Pipelined 16 ADC With DAC Image Prefiltering",
+    "authors": [
+      "Ke Li",
+      "Haoyu Gong",
+      "Congzhou Xianyu",
+      "Zhensheng Li",
+      "Liang Qi",
+      "Mingqiang Guo",
+      "Rui P. Martins",
+      "Sai-Weng Sin"
+    ],
+    "affiliations": [
+      "State-Key Laboratory of Analog and Mixed-Signal VLSI, Institute of Microelectronics, and the Faculty of Science and Technology, Department of ECE, University of Macau, Macau, China",
+      "UM Hetao IC Research Institute, Shenzhen 518000, China",
+      "Department of Micro/Nano Electronics, Shanghai Jiao Tong University, Shanghai 200240, China",
+      "Instituto Superior T\u00e9cnico, Universidade de Lisboa, 1049-001 Lisbon, Portugal"
+    ],
+    "abstract": "This article reports a continuous-time (CT) pipelined delta-sigma (\u0394\u03a3) analog-to-digital converter (ADC) featuring a proposed prefiltering scheme to tackle the DAC image issue. We introduce a fast-shunting route for high-speed DAC image current with a passive RC low-pass filter (LPF) on the quantization (QTZ) path. Together with another LPF on the signal path to align the delay, the CT front-end stage provides a residue signal with a small amplitude and smooth edges, relaxing the linearity requirements on the residue amplifier (RA) and the back-end stage. Specifically, the RC delay in the two LPFs is tracked over process variation, relaxing the signal leakage to the back end. For the back-end stage, we use an all-pass filter (APF) analog delay in a second-order CT cascade of integrators with feedforward (CIFF) \u0394\u03a3 modulator (DSM) with an input feedforward path. Such an APF can restore the unity signal transfer function (STF) under the influence of excess loop delay (ELD), thus simplifying the matching requirement between analog and digital domains\u2019 transfer functions. Prototyped in a 28-nm CMOS process, the proposed ADC operates with a clock of 3.2 GHz, occupying an active area of 0.104 mm\u00b2. It exhibits a 72-dB dynamic range (DR) and a 68.5-dB peak signal-to-noise-and-distortion ratio (SNDR) over a 160-MHz bandwidth (BW). The modulator consumes 36.2 mW, yielding 165-dB Schreier figure-of-merit (FOMs) based on the SNDR.",
+    "references": [
+      {
+        "ref_title": "An ELDC-free 4th-order CT SDM facilitated by 2nd-order NS CT-SAR and AC-coupled negative-R",
+        "ref_authors": [
+          "Z. Xu",
+          "K. Xing",
+          "Y. Zhu",
+          "R. P. Martins",
+          "C.-H. Chan"
+        ],
+        "ref_year": "2024",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_download_link",
+        "download_timestamp": "2025-05-27 23:50:30",
+        "found_doi": "10.1109/cicc57935.2023.10121316"
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:46:17",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 22266,
+      "input_text_preview": "IEEE JOURNAL OF SOLID-STATE CIRCUITS\n1\nA 160-MHz BW 68-dB SNDR 36.2 mW\nContinuous-Time Pipelined 16 ADC\nWith DAC Image Prefiltering\nKe Li , Student Member, IEEE, Haoyu Gong , Student Member, IEEE, Congzhou Xianyu,\nZhensheng Li, Liang Qi , Senior Member, IEEE, Mingqiang Guo , Member, IEEE,\nRui P. Martins , Life Fellow, IEEE, and Sai-Weng Sin , Senior Member, IEEE\nAbstract\u2014 This\narticle\nreports\na\ncontinuous-time\n(CT)\npipelined delta-sigma (16) analog-to-digital converter (ADC)\nfeaturing a proposed...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 242.73,
+      "completion_tokens": 6149,
+      "prompt_tokens": 3565,
+      "total_tokens": 9714,
+      "response_full": "\n\n{\n  \"title\": \"A 160-MHz BW 68-dB SNDR 36.2 mW Continuous-Time Pipelined 16 ADC With DAC Image Prefiltering\",\n  \"authors\": [\n    \"Ke Li\",\n    \"Haoyu Gong\",\n    \"Congzhou Xianyu\",\n    \"Zhensheng Li\",\n    \"Liang Qi\",\n    \"Mingqiang Guo\",\n    \"Rui P. Martins\",\n    \"Sai-Weng Sin\"\n  ],\n  \"affiliations\": [\n    \"State-Key Laboratory of Analog and Mixed-Signal VLSI, Institute of Microelectronics, and the Faculty of Science and Technology, Department of ECE, University of Macau, Macau, China\",\n    \"UM Hetao IC Research Institute, Shenzhen 518000, China\",\n    \"Department of Micro/Nano Electronics, Shanghai Jiao Tong University, Shanghai 200240, China\",\n    \"Instituto Superior T\u00e9cnico, Universidade de Lisboa, 1049-001 Lisbon, Portugal\"\n  ],\n  \"abstract\": \"This article reports a continuous-time (CT) pipelined delta-sigma (\u0394\u03a3) analog-to-digital converter (ADC) featuring a proposed prefiltering scheme to tackle the DAC image issue. We introduce a fast-shunting route for high-speed DAC image current with a passive RC low-pass filter (LPF) on the quantization (QTZ) path. Together with another LPF on the signal path to align the delay, the CT front-end stage provides a residue signal with a small amplitude and smooth edges, relaxing the linearity requirements on the residue amplifier (RA) and the back-end stage. Specifically, the RC delay in the two LPFs is tracked over process variation, relaxing the signal leakage to the back end. For the back-end stage, we use an all-pass filter (APF) analog delay in a second-order CT cascade of integrators with feedforward (CIFF) \u0394\u03a3 modulator (DSM) with an input feedforward path. Such an APF can restore the unity signal transfer function (STF) under the influence of excess loop delay (ELD), thus simplifying the matching requirement between analog and digital domains\u2019 transfer functions. Prototyped in a 28-nm CMOS process, the proposed ADC operates with a clock of 3.2 GHz, occupying an active area of 0.104 mm\u00b2. It exhibits a 72-dB dynamic range (DR) and a 68.5-dB peak signal-to-noise-and-distortion ratio (SNDR) over a 160-MHz bandwidth (BW). The modulator consumes 36.2 mW, yielding 165-dB Schreier figure-of-merit (FOMs) based on the SNDR.\",\n  \"references\": [\n    {\n      \"ref_title\": \"An ELDC-free 4th-order CT SDM facilitated by 2nd-order NS CT-SAR and AC-coupled negative-R\",\n      \"ref_authors\": [\"Z. Xu\", \"K. Xing\", \"Y. Zhu\", \"R. P. Martins\", \"C.-H. Chan\"],\n      \"ref_year\": \"2024\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 0-dB STF-peaking 85-MHz BW 74.4-dB SNDR CT \u0394\u03a3 ADC with unary-approximating DAC calibration in 28-nm CMOS\",\n      \"ref_authors\": [\"H. Liu\", \"X. Xing\", \"G. Gielen\"],\n      \"ref_year\": \"2021\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 4 GHz continuous-time \u0394\u03a3 ADC with 70 dB DR and \u221274 dBFS THD in 125 MHz BW\",\n      \"ref_authors\": [\"M. Bolatkale\", \"L. J. Breems\", \"R. Rutten\", \"K. A. A. Makinwa\"],\n      \"ref_year\": \"2011\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 28-nm 6-GHz 2-bit continuous-time \u0394\u03a3 ADC with \u2212101-dBc THD and 120-MHz bandwidth using blind digital DAC error correction\",\n      \"ref_authors\": [\"M. Bolatkale et al.\"],\n      \"ref_year\": \"2022\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 0.97 mW 260 MS/s 12b pipelined-SAR ADC with ring-TDC-based fine quantizer for PVT robust automatic cross-domain scale alignment\",\n      \"ref_authors\": [\"H. Zhao\", \"F. F. Dai\"],\n      \"ref_year\": \"2022\",\n      \"ref_venue\": \"IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"A 12b 330 MS/s pipelined-SAR ADC with PVT-stabilized dynamic amplifier achieving <1dB SNDR variation\",\n      \"ref_authors\": [\"H. Huang\", \"S. Sarkar\", \"B. Elies\", \"Y. Chiu\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"Trending IC design directions in 2022\",\n      \"ref_authors\": [\"C.-H. Chan et al.\"],\n      \"ref_year\": \"2022\",\n      \"ref_venue\": \"J. Semicond.\"\n    },\n    {\n      \"ref_title\": \"A 71 dB SNDR 200MHz BW interleaved pipe-SAR ADC with a shared residue integrating amplifier achieving 173 dB FoMs\",\n      \"ref_authors\": [\"X. He\", \"M. Gu\", \"H. Jiang\", \"Y. Zhong\", \"N. Sun\", \"L. Jie\"],\n      \"ref_year\": \"2024\",\n      \"ref_venue\": \"IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"Analysis and design of wideband filtering ADCs using continuous-time pipelining\",\n      \"ref_authors\": [\"S. Pavan\", \"S. Manivannan\", \"N. Basavaraj\"],\n      \"ref_year\": \"2024\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 700 MHZ-BW \u2212164 dBFS/Hz-small-signal-NSD 703 mW continuous-time pipelined ADC with on-chip digital reconstruction achieving <\u221285dBFS HD3 using digital cancellation of DAC errors\",\n      \"ref_authors\": [\"S. Patil et al.\"],\n      \"ref_year\": \"2024\",\n      \"ref_venue\": \"IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"A 9-GS/s 1.125-GHz BW oversampling continuous-time pipeline ADC achieving \u2212164-dBFS/Hz NSD\",\n      \"ref_authors\": [\"H. Shibata et al.\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 6.4-GS/s 1-GHz BW continuous-time pipelined ADC with time-interleaved sub-ADC-DAC achieving 61.7-dB SNDR in 16-nm FinFET\",\n      \"ref_authors\": [\"R. Mittal et al.\"],\n      \"ref_year\": \"2024\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 65-nm CMOS continuous-time pipeline ADC achieving 70-dB SNDR in 100-MHz bandwidth\",\n      \"ref_authors\": [\"S. Manivannan\", \"S. Pavan\"],\n      \"ref_year\": \"2021\",\n      \"ref_venue\": \"IEEE Solid-State Circuits Lett.\"\n    },\n    {\n      \"ref_title\": \"A continuous-time 0\u20133 MASH delta-sigma modulator achieving 88 dB DR with 53 MHz BW in 28 nm CMOS\",\n      \"ref_authors\": [\"Y. Dong\", \"W. Yang\", \"R. Schreier\", \"A. Sheikholeslami\", \"S. Korrapati\"],\n      \"ref_year\": \"2014\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A continuous-time 0\u20134 mash delta-sigma modulator achieving +5dBFS MSA\",\n      \"ref_authors\": [\"G. Tan et al.\"],\n      \"ref_year\": \"2023\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. I, Reg. Papers\"\n    },\n    {\n      \"ref_title\": \"Wideband continuous-time MASH delta-sigma modulators: A tutorial review\",\n      \"ref_authors\": [\"L. Qi et al.\"],\n      \"ref_year\": \"2022\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. II, Exp. Briefs\"\n    },\n    {\n      \"ref_title\": \"A 160 MHz-BW 68 dB-SNDR 30.8 mW continuous-time pipeline DSM with correlative passive low-pass filters and DAC image pre-filterin...\",\n      \"ref_authors\": [\"K. Li\", \"X. Congzhou\", \"L. Qi\", \"M. Guo\", \"R. P. Martins\", \"S.-W. Sin\"],\n      \"ref_year\": \"\",\n      \"ref_venue\": \"\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 160-MHz BW 68-dB SNDR 36.2 mW Continuous-Time Pipelined 16 ADC With DAC Image Prefiltering\",\n  \"authors\": [\n    \"Ke Li\",\n    \"Haoyu Gong\",\n    \"Congzhou Xianyu\",\n    \"Zhensheng Li\",\n    \"Liang Qi\",\n    \"Mingqiang Guo\",\n    \"Rui P. Martins\",\n    \"Sai-Weng Sin\"\n  ],\n  \"affiliations\": [\n    \"State-Key Laboratory of Analog and Mixed-Signal VLSI, Institute of Microelectronics, and the Faculty of Science and Technology, Department of ECE, University of Macau, Macau, China\",\n    \"UM H...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_160-MHz_BW_68-dB_SNDR_36.2_mW_Continuous-Time_Pipelined_DeltaSigma_ADC_With_DAC_Image_Prefiltering.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:50:20"
+  },
+  "A_10-mW_10-ENoB_1-GS_s_Ring-Amp-Based_Pipelined_TI-SAR_ADC_With_Split_MDAC_and_Switched_Reference_Decoupling_Capacitor.pdf": {
+    "path": "paper/ADC/A_10-mW_10-ENoB_1-GS_s_Ring-Amp-Based_Pipelined_TI-SAR_ADC_With_Split_MDAC_and_Switched_Reference_Decoupling_Capacitor.pdf",
+    "error": "LLM extraction failed",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:54:21",
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:46:17",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 18338,
+      "input_text_preview": "3576\nIEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 58, NO. 12, DECEMBER 2023\nA 10-mW 10-ENoB 1-GS/s Ring-Amp-Based\nPipelined TI-SAR ADC With Split MDAC and\nSwitched Reference Decoupling Capacitor\nMingtao Zhan , Graduate Student Member, IEEE, Lu Jie, Member, IEEE, Yi Zhong, Member, IEEE,\nand Nan Sun, Senior Member, IEEE\nAbstract\u2014 This article presents a 12-bit 1-GS/s ring-amp-based\nanalog-to-digital converter (ADC) with a pipelined and time-\ninterleaved successive approximation register (TI-SAR) hyb...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 484.18,
+      "completion_tokens": 8507,
+      "prompt_tokens": 3781,
+      "total_tokens": 12288,
+      "response_full": null,
+      "error": "'NoneType' object is not subscriptable",
+      "success": false
+    }
+  },
+  "A_10-b_800-MS_s_Time-Interleaved_SAR_ADC_With_Fast_Variance-Based_Timing-Skew_Calibration.pdf": {
+    "title": "A 10-b 800-MS/s Time-Interleaved SAR ADC With Fast Variance-Based Timing-Skew Calibration",
+    "authors": [
+      "Jeonggoo Song",
+      "Kareem Ragab",
+      "Xiyuan Tang",
+      "Nan Sun"
+    ],
+    "affiliations": [
+      "University of Texas at Austin, Austin, TX 78712 USA",
+      "Broadcom Limited, Irvine, CA 92617 USA"
+    ],
+    "abstract": "This paper presents a time-interleaved (TI) SAR analog-to-digital converter (ADC) with a fast variance-based timing-skew calibration technique. It uses a single-comparator-based window detector (WD) to calibrate the timing skew. The WD can suppress variance estimation errors and allow precise variance estimation from a significantly small number of samples. It has low-hardware cost and orders of magnitude faster convergence speed compared to prior variance-based timing-skew calibration technique. The proposed technique brings collateral benefit of offset mismatch calibration. After timing-skew calibration, a prototype 10-b 800-MS/s ADC in 40-nm CMOS achieves the Nyquist-rate SNDR of 48 dB and consumes 4.9 mW, leading to the Walden FoM of 29.8-fJ/conversion step.",
+    "references": [],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:46:17",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 20811,
+      "input_text_preview": "IEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 52, NO. 10, OCTOBER 2017\n2563\nA 10-b 800-MS/s Time-Interleaved SAR ADC With\nFast Variance-Based Timing-Skew Calibration\nJeonggoo Song, Student Member, IEEE, Kareem Ragab, Member, IEEE, Xiyuan Tang,\nand Nan Sun, Senior Member, IEEE\nAbstract\u2014This paper presents a time-interleaved (TI) SAR\nanalog-to-digital converter (ADC) with a fast variance-based\ntiming-skew calibration technique. It uses a single-comparator-\nbased window detector (WD) to calibrate the ...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 492.32,
+      "completion_tokens": 3004,
+      "prompt_tokens": 2958,
+      "total_tokens": 5962,
+      "response_full": "\n\n{\n  \"title\": \"A 10-b 800-MS/s Time-Interleaved SAR ADC With Fast Variance-Based Timing-Skew Calibration\",\n  \"authors\": [\n    \"Jeonggoo Song\",\n    \"Kareem Ragab\",\n    \"Xiyuan Tang\",\n    \"Nan Sun\"\n  ],\n  \"affiliations\": [\n    \"University of Texas at Austin, Austin, TX 78712 USA\",\n    \"Broadcom Limited, Irvine, CA 92617 USA\"\n  ],\n  \"abstract\": \"This paper presents a time-interleaved (TI) SAR analog-to-digital converter (ADC) with a fast variance-based timing-skew calibration technique. It uses a single-comparator-based window detector (WD) to calibrate the timing skew. The WD can suppress variance estimation errors and allow precise variance estimation from a significantly small number of samples. It has low-hardware cost and orders of magnitude faster convergence speed compared to prior variance-based timing-skew calibration technique. The proposed technique brings collateral benefit of offset mismatch calibration. After timing-skew calibration, a prototype 10-b 800-MS/s ADC in 40-nm CMOS achieves the Nyquist-rate SNDR of 48 dB and consumes 4.9 mW, leading to the Walden FoM of 29.8-fJ/conversion step.\",\n  \"references\": []\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 10-b 800-MS/s Time-Interleaved SAR ADC With Fast Variance-Based Timing-Skew Calibration\",\n  \"authors\": [\n    \"Jeonggoo Song\",\n    \"Kareem Ragab\",\n    \"Xiyuan Tang\",\n    \"Nan Sun\"\n  ],\n  \"affiliations\": [\n    \"University of Texas at Austin, Austin, TX 78712 USA\",\n    \"Broadcom Limited, Irvine, CA 92617 USA\"\n  ],\n  \"abstract\": \"This paper presents a time-interleaved (TI) SAR analog-to-digital converter (ADC) with a fast variance-based timing-skew calibration technique. It uses a ...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_10-b_800-MS_s_Time-Interleaved_SAR_ADC_With_Fast_Variance-Based_Timing-Skew_Calibration.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:54:29"
+  },
+  "A_112134-Gb_s_PAM4_Receiver_Using_a_36-Way_Dual-Comparator_TI-SAR_ADC_in_7-nm_FinFET.pdf": {
+    "title": "A 112\u2013134-Gb/s PAM4 Receiver Using a 36-Way Dual-Comparator TI-SAR ADC in 7-nm FinFET",
+    "authors": [
+      "Pedro Wilson de Abreu Farias Neto",
+      "Kay Hearne",
+      "Ilias Chlis",
+      "Declan Carey",
+      "Ronan Casey",
+      "Ben Grif\ufb01n",
+      "Frantz Stephane F. Ngankem Ngankem",
+      "James Hudner",
+      "Kevin Geary",
+      "Marc Erett",
+      "Asma Laraba",
+      "Haritha Eachempatti",
+      "Jae Wook Kim",
+      "Hongtao Zhang",
+      "Santiago Asuncion",
+      "Yohan Frans"
+    ],
+    "affiliations": [],
+    "abstract": "This letter describes a 112\u2013134-Gb/s PAM-4 wireline receiver (Rx) designed and fabricated in 7-nm CMOS FinFET technology. The Rx includes a T-Coil-assisted on-die termination (ODT), an adaptable continuous-time linear equalizer (ACTLE), a time-interleaved ADC (TI-ADC), clock generation, clock distribution, feed-forward equalizer (FFE), decision feedback equalizer (DFE), and calibration. The TI-ADC is implemented as a 56\u201367-GSa/s, 36-way arrangement of dual-comparator SAR ADCs (SAR subADCs). The Rx achieves BER better than 1e-4 for a data rate as high as 127 Gb/s, with 3.2e-4 BER at 134.4 Gb/s, over a 15-dB die-to-die loss channel and achieves 3e-6 BER over a 33-dB die-to-die channel loss at 28-GHz Nyquist while consuming 5.1 pJ/b of power, excluding DSP power.",
+    "references": [
+      {
+        "ref_title": "Through the looking glass-2020 edition: Trends in solid-state circuits from ISSCC",
+        "ref_authors": [
+          "D. C. Daly",
+          "L. C. Fujino",
+          "K. C. Smith"
+        ],
+        "ref_year": 2020,
+        "ref_venue": "IEEE Solid-State Circuits Mag.",
+        "download_path": "output/downloads/Through_the_Looking_Glass-2020_Edition_Trends_in_Solid-State_Circuits_From_ISSCC._IEEE_Solid-State_C_10.1109_mssc.2019.2952282.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-27 23:59:15",
+        "found_doi": "10.1109/mssc.2019.2952282"
+      },
+      {
+        "ref_title": "Common Electrical I/O (CEI)-112G",
+        "ref_authors": [],
+        "ref_year": 2020,
+        "ref_venue": "",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_download_link",
+        "download_timestamp": "2025-05-27 23:59:21",
+        "found_doi": "10.1016/b978-0-12-800629-0.00038-3"
+      },
+      {
+        "ref_title": "112Gbps Serial Transmission Over Copper-PAM4 vs PAM8 Signaling",
+        "ref_authors": [
+          "M. Wu",
+          "K. Qiu",
+          "G. Zhang"
+        ],
+        "ref_year": 2017,
+        "ref_venue": "DesignCon",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+        "download_timestamp": "2025-05-28 00:00:09",
+        "found_doi": "10.1109/lats49555.2020.9093685"
+      },
+      {
+        "ref_title": "A 112GB/S PAM4 wireline receiver using a 64-way time-interleaved SAR ADC in 16nm FinFET",
+        "ref_authors": [
+          "J. Hudner et al."
+        ],
+        "ref_year": 2018,
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits",
+        "download_path": "output/downloads/A_56Gbs_PAM4_wireline_transceiver_using_a_32-way_time-interleaved_SAR_ADC_in_16nm_FinFET._10.1109_vlsic.2016.7573474.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:00:34",
+        "found_doi": "10.1109/vlsic.2016.7573474"
+      },
+      {
+        "ref_title": "A 56Gb/s PAM4 wireline transceiver using a 32-way time-interleaved SAR ADC in 16nm FinFET",
+        "ref_authors": [
+          "Y. Frans et al."
+        ],
+        "ref_year": 2016,
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits",
+        "download_path": "output/downloads/A_56Gbs_PAM4_wireline_transceiver_using_a_32-way_time-interleaved_SAR_ADC_in_16nm_FinFET._10.1109_vlsic.2016.7573474.pdf",
+        "download_success": true,
+        "download_status": "skipped",
+        "download_timestamp": "2025-05-28 00:00:46",
+        "found_doi": "10.1109/vlsic.2016.7573474"
+      },
+      {
+        "ref_title": "The bridged T-coil",
+        "ref_authors": [
+          "B. Razavi"
+        ],
+        "ref_year": 2015,
+        "ref_venue": "IEEE Solid-State Circuits Mag.",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_download_link",
+        "download_timestamp": "2025-05-28 00:00:58",
+        "found_doi": "10.36227/techrxiv.170775774.46459616/v1"
+      },
+      {
+        "ref_title": "Bandwidth extension techniques for CMOS ampli\ufb01ers",
+        "ref_authors": [
+          "S. Shekhar",
+          "J. S. Walling",
+          "D. J. Allstot"
+        ],
+        "ref_year": 2006,
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "download_failed_after_retries",
+        "download_timestamp": "2025-05-28 00:01:26",
+        "found_doi": "10.1109/iws52775.2021.9499477"
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:49:13",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 8007,
+      "input_text_preview": "138\nIEEE SOLID-STATE CIRCUITS LETTERS, VOL. 3, 2020\nA 112\u2013134-Gb/s PAM4 Receiver Using a 36-Way Dual-Comparator\nTI-SAR ADC in 7-nm FinFET\nPedro Wilson de Abreu Farias Neto\n, Member, IEEE, Kay Hearne, Ilias Chlis, Declan Carey, Ronan Casey,\nBen Grif\ufb01n, Frantz Stephane F. Ngankem Ngankem, James Hudner, Kevin Geary, Marc Erett\n, Asma Laraba,\nHaritha Eachempatti, Member, IEEE, Jae Wook Kim, Hongtao Zhang\n, Member, IEEE,\nSantiago Asuncion, and Yohan Frans\n, Member, IEEE\nAbstract\u2014This\nletter\ndescribes...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 457.84,
+      "completion_tokens": 5655,
+      "prompt_tokens": 2712,
+      "total_tokens": 8367,
+      "response_full": "\n\n{\n  \"title\": \"A 112\u2013134-Gb/s PAM4 Receiver Using a 36-Way Dual-Comparator TI-SAR ADC in 7-nm FinFET\",\n  \"authors\": [\n    \"Pedro Wilson de Abreu Farias Neto\",\n    \"Kay Hearne\",\n    \"Ilias Chlis\",\n    \"Declan Carey\",\n    \"Ronan Casey\",\n    \"Ben Grif\ufb01n\",\n    \"Frantz Stephane F. Ngankem Ngankem\",\n    \"James Hudner\",\n    \"Kevin Geary\",\n    \"Marc Erett\",\n    \"Asma Laraba\",\n    \"Haritha Eachempatti\",\n    \"Jae Wook Kim\",\n    \"Hongtao Zhang\",\n    \"Santiago Asuncion\",\n    \"Yohan Frans\"\n  ],\n  \"affiliations\": [],\n  \"abstract\": \"This letter describes a 112\u2013134-Gb/s PAM-4 wireline receiver (Rx) designed and fabricated in 7-nm CMOS FinFET technology. The Rx includes a T-Coil-assisted on-die termination (ODT), an adaptable continuous-time linear equalizer (ACTLE), a time-interleaved ADC (TI-ADC), clock generation, clock distribution, feed-forward equalizer (FFE), decision feedback equalizer (DFE), and calibration. The TI-ADC is implemented as a 56\u201367-GSa/s, 36-way arrangement of dual-comparator SAR ADCs (SAR subADCs). The Rx achieves BER better than 1e-4 for a data rate as high as 127 Gb/s, with 3.2e-4 BER at 134.4 Gb/s, over a 15-dB die-to-die loss channel and achieves 3e-6 BER over a 33-dB die-to-die channel loss at 28-GHz Nyquist while consuming 5.1 pJ/b of power, excluding DSP power.\",\n  \"references\": [\n    {\n      \"ref_title\": \"Through the looking glass-2020 edition: Trends in solid-state circuits from ISSCC\",\n      \"ref_authors\": [\"D. C. Daly\", \"L. C. Fujino\", \"K. C. Smith\"],\n      \"ref_year\": 2020,\n      \"ref_venue\": \"IEEE Solid-State Circuits Mag.\"\n    },\n    {\n      \"ref_title\": \"Common Electrical I/O (CEI)-112G\",\n      \"ref_authors\": [],\n      \"ref_year\": 2020,\n      \"ref_venue\": \"\"\n    },\n    {\n      \"ref_title\": \"112Gbps Serial Transmission Over Copper-PAM4 vs PAM8 Signaling\",\n      \"ref_authors\": [\"M. Wu\", \"K. Qiu\", \"G. Zhang\"],\n      \"ref_year\": 2017,\n      \"ref_venue\": \"DesignCon\"\n    },\n    {\n      \"ref_title\": \"A 112GB/S PAM4 wireline receiver using a 64-way time-interleaved SAR ADC in 16nm FinFET\",\n      \"ref_authors\": [\"J. Hudner et al.\"],\n      \"ref_year\": 2018,\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits\"\n    },\n    {\n      \"ref_title\": \"A 56Gb/s PAM4 wireline transceiver using a 32-way time-interleaved SAR ADC in 16nm FinFET\",\n      \"ref_authors\": [\"Y. Frans et al.\"],\n      \"ref_year\": 2016,\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits\"\n    },\n    {\n      \"ref_title\": \"The bridged T-coil\",\n      \"ref_authors\": [\"B. Razavi\"],\n      \"ref_year\": 2015,\n      \"ref_venue\": \"IEEE Solid-State Circuits Mag.\"\n    },\n    {\n      \"ref_title\": \"Bandwidth extension techniques for CMOS ampli\ufb01ers\",\n      \"ref_authors\": [\"S. Shekhar\", \"J. S. Walling\", \"D. J. Allstot\"],\n      \"ref_year\": 2006,\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 0.5-16.3Gbps multi-standard serial transceiver with 219mW/channel in 16nm FinFET\",\n      \"ref_authors\": [\"M. Erett et al.\"],\n      \"ref_year\": 2016,\n      \"ref_venue\": \"Proc. 42nd Eur. Solid-State Circuits Conf. (ESSCIRC)\"\n    },\n    {\n      \"ref_title\": \"Understanding metastability in SAR ADCs: Part II: Asynchronous\",\n      \"ref_authors\": [\"A. Yu\", \"D. Bankman\", \"K. Zheng\", \"B. Murmann\"],\n      \"ref_year\": 2019,\n      \"ref_venue\": \"IEEE Solid-State Circuits Mag.\"\n    },\n    {\n      \"ref_title\": \"Calibration techniques for time-interleaved SAR A/D converters\",\n      \"ref_authors\": [\"D. Stepanovic\"],\n      \"ref_year\": 2012,\n      \"ref_venue\": \"\"\n    },\n    {\n      \"ref_title\": \"112 Gb/s PAM4 ADC based SERDES receiver for long-reach channels in 10nm process\",\n      \"ref_authors\": [\"Y. Krupnik et al.\"],\n      \"ref_year\": 2019,\n      \"ref_venue\": \"Proc. Symp. VLSI Circuits\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 112\u2013134-Gb/s PAM4 Receiver Using a 36-Way Dual-Comparator TI-SAR ADC in 7-nm FinFET\",\n  \"authors\": [\n    \"Pedro Wilson de Abreu Farias Neto\",\n    \"Kay Hearne\",\n    \"Ilias Chlis\",\n    \"Declan Carey\",\n    \"Ronan Casey\",\n    \"Ben Grif\ufb01n\",\n    \"Frantz Stephane F. Ngankem Ngankem\",\n    \"James Hudner\",\n    \"Kevin Geary\",\n    \"Marc Erett\",\n    \"Asma Laraba\",\n    \"Haritha Eachempatti\",\n    \"Jae Wook Kim\",\n    \"Hongtao Zhang\",\n    \"Santiago Asuncion\",\n    \"Yohan Frans\"\n  ],\n  \"affiliati...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_112134-Gb_s_PAM4_Receiver_Using_a_36-Way_Dual-Comparator_TI-SAR_ADC_in_7-nm_FinFET.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:56:50"
+  },
+  "A_2.5_GS_s_7-Bit_5-Way_Time-Interleaved_SAR_ADC_With_On-Chip_Background_Offset_and_Timing-Skew_Calibration.pdf": {
+    "title": "A 2.5 GS/s 7-Bit 5-Way Time-Interleaved SAR ADC With On-Chip Background Offset and Timing-Skew Calibration",
+    "authors": [
+      "Kiho Seong",
+      "Jae-Soub Han",
+      "Yong Shim",
+      "Kwang-Hyun Baek"
+    ],
+    "affiliations": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "abstract": "This brief presents the on-chip background offset and timing-skew calibration of the 1-then-2b/cycle time-interleaved successive-approximation-register analog-to-digital converter (TI SAR ADC). For timing-skew between sub-ADC\u2019s sampling clocks, a comparator offset-based window detector (WD) is used to adjust the clock edge misalignment. In addition, comparator offset calibration is considered both in terms of 1) global offset (between the offset-free reference comparator and the local reference comparator in each sub-ADC) and 2) local offset (between the local reference comparator and the rest of the comparators in the same sub-ADC). The proposed calibration sufficiently suppresses noise floor and spurs, and all calibrations are performed in the background without interfering with normal ADC operation. The prototype 5-way TI SAR ADC is fabricated in a 28 nm CMOS process and occupies a 0.03 mm2 area including on-chip calibration. With the proposed calibration, the prototype achieves SNDR of 40 dB at Nyquist input and consumes 7.57 mW, leading to the Walden figure of merit (FoMW) of 37.2 fJ/conversion-step.",
+    "references": [
+      {
+        "ref_title": "A 79 GHz phase-modulated 4 GHz-BW CW radar transmitter in 28 nm CMOS",
+        "ref_authors": [
+          "V. Giannini et al."
+        ],
+        "ref_year": "2014",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/A_79_GHz_Phase-Modulated_4_GHz-BW_CW_Radar_Transmitter_in_28_nm_CMOS._IEEE_10.1109_jssc.2014.2355819.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:00:39",
+        "found_doi": "10.1109/jssc.2014.2355819"
+      },
+      {
+        "ref_title": "A 2-GS/s 8-bit time-interleaved SAR ADC for millimeter-wave pulsed radar baseband SoC",
+        "ref_authors": [
+          "T. Miki",
+          "T. Ozeki",
+          "J.-I. Naka"
+        ],
+        "ref_year": "2017",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/A_2-GSs_8-bit_Time-Interleaved_SAR_ADC_for_Millimeter-Wave_Pulsed_Radar_Baseband_SoC._IEEE_Journal_10.1109_jssc.2017.2732732.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:00:54",
+        "found_doi": "10.1109/jssc.2017.2732732"
+      },
+      {
+        "ref_title": "A 6-bit 1.3-GS/s ping\u2013pong domino-SAR ADC in 55-nm CMOS",
+        "ref_authors": [
+          "Y.-H. Chung",
+          "W.-S. Rih",
+          "C.-W. Chang"
+        ],
+        "ref_year": "2018",
+        "ref_venue": "IEEE Trans. Circuits Syst. II, Exp. Briefs",
+        "download_path": "output/downloads/A_6-bit_1.3-GSs_Ping-Pong_Domino-SAR_ADC_in_55-nm_CMOS._IEEE_Transactions_on_Circuits_and_10.1109_tcsii.2018.2801295.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:01:12",
+        "found_doi": "10.1109/tcsii.2018.2801295"
+      },
+      {
+        "ref_title": "Explicit analysis of channel mismatch effects in time-interleaved ADC systems",
+        "ref_authors": [
+          "N. Kurosawa",
+          "H. Kobayashi",
+          "K. Maruyama",
+          "H. Sugawara",
+          "K. Kobayashi"
+        ],
+        "ref_year": "2001",
+        "ref_venue": "IEEE Trans. Circuits Syst. I, Fundam. Theory Appl.",
+        "download_path": "output/downloads/10.1109imtc.2000.848838_10.1109_imtc.2000.848838.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:01:24",
+        "found_doi": "10.1109/imtc.2000.848838"
+      },
+      {
+        "ref_title": "Design considerations for interleaved ADCs",
+        "ref_authors": [
+          "B. Razavi"
+        ],
+        "ref_year": "2013",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/Design_Considerations_for_Interleaved_ADCs._IEEE_Journal_of_Solid-State_Circuits,_48(8),_1806\u20131817___10.1109_jssc.2013.2258814.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:03:34",
+        "found_doi": "10.1109/jssc.2013.2258814"
+      },
+      {
+        "ref_title": "A 10-b 800-MS/s time-interleaved SAR ADC with fast variance-based timing-skew calibration",
+        "ref_authors": [
+          "J. Song",
+          "K. Ragab",
+          "X. Tang",
+          "N. Sun"
+        ],
+        "ref_year": "2017",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/A_10-b_800-MSs_Time-Interleaved_SAR_ADC_With_Fast_Variance-Based_Timing-Skew_Calibration._IEEE_Journ_10.1109_jssc.2017.2713523.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:03:58",
+        "found_doi": "10.1109/jssc.2017.2713523"
+      },
+      {
+        "ref_title": "A two-way interleaved 7-b 2.4-GS/s 1-then-2 b/cycle SAR ADC with background offset calibration",
+        "ref_authors": [
+          "C.-H. Chan",
+          "Y. Zhu",
+          "W.-H. Zhang",
+          "U. Seng-Pan",
+          "R. P. Martins"
+        ],
+        "ref_year": "2018",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "download_failed_after_retries",
+        "download_timestamp": "2025-05-28 00:04:11",
+        "found_doi": "10.1109/iscas.2018.8351330"
+      },
+      {
+        "ref_title": "Accuracy-enhanced variance-based time-skew calibration using SAR as window detector",
+        "ref_authors": [
+          "J. Liu",
+          "C.-H. Chan",
+          "S.-W. Sin",
+          "U. Seng-Pan",
+          "R. P. Martins"
+        ],
+        "ref_year": "2019",
+        "ref_venue": "IEEE Trans. Very Large Scale Integr. (VLSI) Syst.",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "download_failed_after_retries",
+        "download_timestamp": "2025-05-28 00:04:30",
+        "found_doi": "10.1109/tvlsi.2018.2874772"
+      },
+      {
+        "ref_title": "A 10-b 600-MS/s 2-way time-interleaved SAR ADC with mean absolute deviation-based background timing-skew calibration",
+        "ref_authors": [
+          "J. Song",
+          "K. Ragab",
+          "X. Tang",
+          "N. Sun"
+        ],
+        "ref_year": "2020",
+        "ref_venue": "IEEE Trans. Circuits Syst. I, Reg. Papers",
+        "download_path": "output/downloads/A_10-b_600-MSs_2-way_time-interleaved_SAR_ADC_with_mean_absolute_deviation_based_background_timing-s_10.1109_cicc.2018.8357058.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:04:46",
+        "found_doi": "10.1109/cicc.2018.8357058"
+      },
+      {
+        "ref_title": "A 1.6-GS/s 12.2-mW seven-/eight-way split time-interleaved SAR ADC achieving 54.2-dB SNDR with digital background timing mismatch calibration",
+        "ref_authors": [
+          "M. Guo",
+          "J. Mao",
+          "S.-W. Sin",
+          "H. Wei",
+          "R. P. Martins"
+        ],
+        "ref_year": "2020",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/A_1.6-GSs_12.2-mW_Seven-Eight-Way_Split_Time-Interleaved_SAR_ADC_Achieving_54.2-dB_SNDR_With_Digital_10.1109_jssc.2019.2945298.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:05:01",
+        "found_doi": "10.1109/jssc.2019.2945298"
+      },
+      {
+        "ref_title": "A 40-nm CMOS 7-b 32-GS/s SAR ADC with background channel mismatch calibration",
+        "ref_authors": [
+          "D.-S. Jo",
+          "B.-R.-S. Sung",
+          "M.-J. Seo",
+          "W.-C. Kim",
+          "S.-T. Ryu"
+        ],
+        "ref_year": "2020",
+        "ref_venue": "IEEE Trans. Circuits Syst. II, Exp. Briefs",
+        "download_path": "output/downloads/A_40-nm_CMOS_7-b_32-GSs_SAR_ADC_with_Background_Channel_Mismatch_Calibration._IEEE_Transactions_10.1109_tcsii.2019.2916913.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:05:16",
+        "found_doi": "10.1109/tcsii.2019.2916913"
+      },
+      {
+        "ref_title": "Time-interleaved SAR ADC with background timing-skew calibration for UWB wireless communication in IoT systems",
+        "ref_authors": [
+          "K. Seong et al."
+        ],
+        "ref_year": "2020",
+        "ref_venue": "Sensors",
+        "download_path": "output/downloads/Time-Interleaved_SAR_ADC_with_Background_Timing-Skew_Calibration_for_UWB_Wireless_Communication_in_I_10.3390_s20082430.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:08:19",
+        "found_doi": "10.3390/s20082430"
+      },
+      {
+        "ref_title": "A 7-bit 2 GS/s time-interleaved SAR ADC with timing skew calibration based on current integrating sampler",
+        "ref_authors": [
+          "W. Jiang",
+          "Y. Zhu",
+          "C.-H. Chan",
+          "B. Murmann",
+          "R. P. Martins"
+        ],
+        "ref_year": "2021",
+        "ref_venue": "IEEE Trans. Circuits Syst. I, Reg. Papers",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "download_failed_after_retries",
+        "download_timestamp": "2025-05-28 00:08:29",
+        "found_doi": "10.1109/asscc.2018.8579344"
+      },
+      {
+        "ref_title": "A 5-GS/s 158.6-mW 9.4-ENOB passive-sampling time-interleaved three-stage pipelined-SAR ADC with analog\u2013digital corrections in 28-nm CMOS",
+        "ref_authors": [
+          "A. T. Ramkaj et al."
+        ],
+        "ref_year": "2020",
+        "ref_venue": "IEEE J. Solid-State Circuits",
+        "download_path": "output/downloads/A_5-GSs_158.6-mW_9.4-ENOB_Passive-Sampling_Time-Interleaved_Three-Stage_Pipelined-SAR_ADC_With_Analo_10.1109_jssc.2019.2960476.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:09:35",
+        "found_doi": "10.1109/jssc.2019.2960476"
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:54:21",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 9167,
+      "input_text_preview": "IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS\u2014II: EXPRESS BRIEFS, VOL. 69, NO. 10, OCTOBER 2022\n4043\nA 2.5 GS/s 7-Bit 5-Way Time-Interleaved SAR\nADC With On-Chip Background Offset and\nTiming-Skew Calibration\nKiho Seong\n, Graduate Student Member, IEEE, Jae-Soub Han\n, Graduate Student Member, IEEE,\nYong Shim\n, Member, IEEE, and Kwang-Hyun Baek\n, Senior Member, IEEE\nAbstract\u2014This brief presents the on-chip background off-\nset and timing-skew calibration of the 1-then-2b/cycle time-\ninterleaved\nsuccessi...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 179.46,
+      "completion_tokens": 4043,
+      "prompt_tokens": 3239,
+      "total_tokens": 7282,
+      "response_full": "\n\n{\n  \"title\": \"A 2.5 GS/s 7-Bit 5-Way Time-Interleaved SAR ADC With On-Chip Background Offset and Timing-Skew Calibration\",\n  \"authors\": [\"Kiho Seong\", \"Jae-Soub Han\", \"Yong Shim\", \"Kwang-Hyun Baek\"],\n  \"affiliations\": [\"\", \"\", \"\", \"\"],\n  \"abstract\": \"This brief presents the on-chip background offset and timing-skew calibration of the 1-then-2b/cycle time-interleaved successive-approximation-register analog-to-digital converter (TI SAR ADC). For timing-skew between sub-ADC\u2019s sampling clocks, a comparator offset-based window detector (WD) is used to adjust the clock edge misalignment. In addition, comparator offset calibration is considered both in terms of 1) global offset (between the offset-free reference comparator and the local reference comparator in each sub-ADC) and 2) local offset (between the local reference comparator and the rest of the comparators in the same sub-ADC). The proposed calibration sufficiently suppresses noise floor and spurs, and all calibrations are performed in the background without interfering with normal ADC operation. The prototype 5-way TI SAR ADC is fabricated in a 28 nm CMOS process and occupies a 0.03 mm2 area including on-chip calibration. With the proposed calibration, the prototype achieves SNDR of 40 dB at Nyquist input and consumes 7.57 mW, leading to the Walden figure of merit (FoMW) of 37.2 fJ/conversion-step.\",\n  \"references\": [\n    {\n      \"ref_title\": \"A 79 GHz phase-modulated 4 GHz-BW CW radar transmitter in 28 nm CMOS\",\n      \"ref_authors\": [\"V. Giannini et al.\"],\n      \"ref_year\": \"2014\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 2-GS/s 8-bit time-interleaved SAR ADC for millimeter-wave pulsed radar baseband SoC\",\n      \"ref_authors\": [\"T. Miki\", \"T. Ozeki\", \"J.-I. Naka\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 6-bit 1.3-GS/s ping\u2013pong domino-SAR ADC in 55-nm CMOS\",\n      \"ref_authors\": [\"Y.-H. Chung\", \"W.-S. Rih\", \"C.-W. Chang\"],\n      \"ref_year\": \"2018\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. II, Exp. Briefs\"\n    },\n    {\n      \"ref_title\": \"Explicit analysis of channel mismatch effects in time-interleaved ADC systems\",\n      \"ref_authors\": [\"N. Kurosawa\", \"H. Kobayashi\", \"K. Maruyama\", \"H. Sugawara\", \"K. Kobayashi\"],\n      \"ref_year\": \"2001\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. I, Fundam. Theory Appl.\"\n    },\n    {\n      \"ref_title\": \"Design considerations for interleaved ADCs\",\n      \"ref_authors\": [\"B. Razavi\"],\n      \"ref_year\": \"2013\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 10-b 800-MS/s time-interleaved SAR ADC with fast variance-based timing-skew calibration\",\n      \"ref_authors\": [\"J. Song\", \"K. Ragab\", \"X. Tang\", \"N. Sun\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A two-way interleaved 7-b 2.4-GS/s 1-then-2 b/cycle SAR ADC with background offset calibration\",\n      \"ref_authors\": [\"C.-H. Chan\", \"Y. Zhu\", \"W.-H. Zhang\", \"U. Seng-Pan\", \"R. P. Martins\"],\n      \"ref_year\": \"2018\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"Accuracy-enhanced variance-based time-skew calibration using SAR as window detector\",\n      \"ref_authors\": [\"J. Liu\", \"C.-H. Chan\", \"S.-W. Sin\", \"U. Seng-Pan\", \"R. P. Martins\"],\n      \"ref_year\": \"2019\",\n      \"ref_venue\": \"IEEE Trans. Very Large Scale Integr. (VLSI) Syst.\"\n    },\n    {\n      \"ref_title\": \"A 10-b 600-MS/s 2-way time-interleaved SAR ADC with mean absolute deviation-based background timing-skew calibration\",\n      \"ref_authors\": [\"J. Song\", \"K. Ragab\", \"X. Tang\", \"N. Sun\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. I, Reg. Papers\"\n    },\n    {\n      \"ref_title\": \"A 1.6-GS/s 12.2-mW seven-/eight-way split time-interleaved SAR ADC achieving 54.2-dB SNDR with digital background timing mismatch calibration\",\n      \"ref_authors\": [\"M. Guo\", \"J. Mao\", \"S.-W. Sin\", \"H. Wei\", \"R. P. Martins\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 40-nm CMOS 7-b 32-GS/s SAR ADC with background channel mismatch calibration\",\n      \"ref_authors\": [\"D.-S. Jo\", \"B.-R.-S. Sung\", \"M.-J. Seo\", \"W.-C. Kim\", \"S.-T. Ryu\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. II, Exp. Briefs\"\n    },\n    {\n      \"ref_title\": \"Time-interleaved SAR ADC with background timing-skew calibration for UWB wireless communication in IoT systems\",\n      \"ref_authors\": [\"K. Seong et al.\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"Sensors\"\n    },\n    {\n      \"ref_title\": \"A 7-bit 2 GS/s time-interleaved SAR ADC with timing skew calibration based on current integrating sampler\",\n      \"ref_authors\": [\"W. Jiang\", \"Y. Zhu\", \"C.-H. Chan\", \"B. Murmann\", \"R. P. Martins\"],\n      \"ref_year\": \"2021\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. I, Reg. Papers\"\n    },\n    {\n      \"ref_title\": \"A 5-GS/s 158.6-mW 9.4-ENOB passive-sampling time-interleaved three-stage pipelined-SAR ADC with analog\u2013digital corrections in 28-nm CMOS\",\n      \"ref_authors\": [\"A. T. Ramkaj et al.\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 2.5 GS/s 7-Bit 5-Way Time-Interleaved SAR ADC With On-Chip Background Offset and Timing-Skew Calibration\",\n  \"authors\": [\"Kiho Seong\", \"Jae-Soub Han\", \"Yong Shim\", \"Kwang-Hyun Baek\"],\n  \"affiliations\": [\"\", \"\", \"\", \"\"],\n  \"abstract\": \"This brief presents the on-chip background offset and timing-skew calibration of the 1-then-2b/cycle time-interleaved successive-approximation-register analog-to-digital converter (TI SAR ADC). For timing-skew between sub-ADC\u2019s sampling clocks, a ...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_2.5_GS_s_7-Bit_5-Way_Time-Interleaved_SAR_ADC_With_On-Chip_Background_Offset_and_Timing-Skew_Calibration.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:57:20"
+  },
+  "A_64-fJ_Conv.-Step_Continuous-Time_Sigma_Delta_Modulator_in_40-nm_CMOS_Using_Asynchronous_SAR_Quantizer_and_Digital_Delta_Sigma_Truncator.pdf": {
+    "title": "A 64-fJ/Conv.-Step Continuous-Time Modulator in 40-nm CMOS Using Asynchronous SAR Quantizer and Digital Truncator",
+    "authors": [
+      "Hung-Chieh Tsai",
+      "Chi-Lun Lo",
+      "Chen-Yen Ho",
+      "Yu-Hsin Lin"
+    ],
+    "affiliations": [
+      "MediaTek Inc., Hsin-Chu 30078, Taiwan"
+    ],
+    "abstract": "A third-order single-loop continuous-time sigma-delta modulator (CTSDM) with 6-bit asynchronous successive approximation register (ASAR) quantizer and digital truncator for WCDMA/GSM/EDGE cellular systems is presented. The proposed ASAR-based quantizer reduces the area and power of the modulator dramatically by utilizing the digital truncation technique. By using the 6-bit ASAR quantizer, the sampling frequency is lowered, which reduces the design efforts not only in system level but also in the modulator. In addition, the ac-coupled push\u2013pull stage is employed to improve the high-frequency driving capability of the first integrator. Sampling at 65 MHz, the modulator achieves 83.4 dB dynamic range (DR) and 80/79.6 dB peak SNR/SNDR with 1.92 MHz bandwidth in WCDMA mode. In GSM/EDGE mode, the DR is 96.2 dB. Fabricated in 40-nm CMOS, the modulator occupies 0.051 mm and consumes 1.91 mW from a 1.2-V supply. A 64fJ/conv.-step figure of merit is achieved.",
+    "references": [
+      {
+        "ref_title": "A single-bit 500 kHz\u201310 MHz multimode power-performance scalable 83-to-67 dB DR CT for SDR in 90 nm digital CMOS",
+        "ref_authors": [
+          "P. Crombez",
+          "G. V. der Plas",
+          "M. S. J. Steyaert",
+          "J. Craninckx"
+        ],
+        "ref_year": "2010",
+        "ref_venue": "IEEE J. Solid State Circuits, vol. 45, no. 6, pp. 1159\u20131171, Jun.",
+        "download_path": "output/downloads/A_Single-Bit_500_kHz-10_MHz_Multimode_Power-Performance_Scalable_83-to-67_dB_DR_CT\u0394\u03a3_for_SDR_10.1109_jssc.2010.2046230.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-27 23:58:20",
+        "found_doi": "10.1109/jssc.2010.2046230"
+      },
+      {
+        "ref_title": "A 2.8-to-8.5 mW GSM/bluetooth/UMTS/DVB-H/WLAN fully reconfigurable CT with 200 kHz to 20 MHz BW for 4 G radios in 90 nm digital CMOS",
+        "ref_authors": [
+          "Y. Ke",
+          "P. Gao",
+          "J. Craninckx",
+          "G. V. der Plas",
+          "G. Gielen"
+        ],
+        "ref_year": "2010",
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits, Jun.",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_doi_found",
+        "download_timestamp": "2025-05-27 23:59:38"
+      },
+      {
+        "ref_title": "A 0.13 m CMOS 0.1\u201320 MHz bandwidth 86\u201370 dB DR multi-mode DT ADC for IMT-advanced",
+        "ref_authors": [
+          "T. Christen",
+          "Q. Huang"
+        ],
+        "ref_year": "2010",
+        "ref_venue": "Proc. IEEE ESSCIRC, Sep.",
+        "download_path": "output/downloads/A_0.13\u00b5m_CMOS_0.1\u201320MHz_bandwidth_86\u201370dB_DR_multi-mode_DT_\u0394\u03a3_ADC_for_IMT-Advanced._2010_10.1109_esscirc.2010.5619731.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-27 23:59:54",
+        "found_doi": "10.1109/esscirc.2010.5619731"
+      },
+      {
+        "ref_title": "A 3-mW 74-dB SNR 2-MHz continuous-time delta-sigma ADC with a tracking ADC quantizer in 0.13- m CMOS",
+        "ref_authors": [
+          "L. Dorrer",
+          "F. Kuttner",
+          "P. Greco",
+          "P. Torta",
+          "T. Hartig"
+        ],
+        "ref_year": "2005",
+        "ref_venue": "IEEE J. Solid State Circuits, vol. 40, no. 12, pp. 2416\u20132427, Dec.",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_doi_found",
+        "download_timestamp": "2025-05-28 00:00:03"
+      },
+      {
+        "ref_title": "A 5th-order CT/DT multi-mode modulator",
+        "ref_authors": [
+          "B. Putter"
+        ],
+        "ref_year": "2007",
+        "ref_venue": "IEEE ISSCC Dig. Tech. Papers, Feb.",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_doi_found",
+        "download_timestamp": "2025-05-28 00:00:09"
+      },
+      {
+        "ref_title": "A 2.8 mW ADC with 83 dB DR and 1.92 MHz BW using FIR outer feedback and TIA-based integrator",
+        "ref_authors": [
+          "J. Gealow",
+          "M. Ashburn",
+          "C.-H. Lou",
+          "S. Ho",
+          "P. Riehl",
+          "A. Shabra",
+          "J. Silva",
+          "Q. Yu"
+        ],
+        "ref_year": "2011",
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits, June",
+        "download_path": "output/downloads/A_7.2_mW_75.3_dB_SNDR_10_MHz_BW_CT_delta-sigma_modulator_using_Gm-C-based_10.1109_vlsic.2015.7231279.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:00:45",
+        "found_doi": "10.1109/vlsic.2015.7231279"
+      },
+      {
+        "ref_title": "A 10 MHz BW 50 fJ/conv. continuous time modulator with high-order single Opamp integrator using optimization-based design method",
+        "ref_authors": [
+          "K. Matsukawa",
+          "K. Obata",
+          "Y. Mitani",
+          "S. Dosho"
+        ],
+        "ref_year": "2012",
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits, Jun.",
+        "download_path": "",
+        "download_success": false,
+        "download_status": "no_doi_found",
+        "download_timestamp": "2025-05-28 00:00:55"
+      },
+      {
+        "ref_title": "A 69.8 dB SNDR 3rd-order continuous time delta-sigma modulator with a ultimate low power tuning system for a worldwide digital TV-receiver,...",
+        "ref_authors": [
+          "K. Matsukawa",
+          "Y. Mitani",
+          "M. Takayama",
+          "K. Obata",
+          "Y. Tokunaga",
+          "S. Sakiyama",
+          "S. Dosho"
+        ],
+        "ref_year": "",
+        "ref_venue": "",
+        "download_path": "output/downloads/A_69.8_dB_SNDR_3rd-order_Continuous_Time_Delta-Sigma_Modulator_with_an_Ultimate_Low_Power_10.1109_cicc.2010.5617591.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:01:17",
+        "found_doi": "10.1109/cicc.2010.5617591"
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-27 23:54:29",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 16282,
+      "input_text_preview": "IEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 48, NO. 11, NOVEMBER 2013\n2637\nA 64-fJ/Conv.-Step Continuous-Time\nModulator\nin 40-nm CMOS Using Asynchronous SAR\nQuantizer and Digital\nTruncator\nHung-Chieh Tsai, Chi-Lun Lo, Chen-Yen Ho, Member, IEEE, and Yu-Hsin Lin\nAbstract\u2014A third-order single-loop continuous-time sigma-\ndelta modulator (CTSDM) with 6-bit asynchronous successive\napproximation register (ASAR) quantizer and digital\ntrun-\ncator for WCDMA/GSM/EDGE cellular systems is presented.\nThe propo...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 215.05,
+      "completion_tokens": 3203,
+      "prompt_tokens": 3416,
+      "total_tokens": 6619,
+      "response_full": "\n\n{\n  \"title\": \"A 64-fJ/Conv.-Step Continuous-Time Modulator in 40-nm CMOS Using Asynchronous SAR Quantizer and Digital Truncator\",\n  \"authors\": [\n    \"Hung-Chieh Tsai\",\n    \"Chi-Lun Lo\",\n    \"Chen-Yen Ho\",\n    \"Yu-Hsin Lin\"\n  ],\n  \"affiliations\": [\n    \"MediaTek Inc., Hsin-Chu 30078, Taiwan\"\n  ],\n  \"abstract\": \"A third-order single-loop continuous-time sigma-delta modulator (CTSDM) with 6-bit asynchronous successive approximation register (ASAR) quantizer and digital truncator for WCDMA/GSM/EDGE cellular systems is presented. The proposed ASAR-based quantizer reduces the area and power of the modulator dramatically by utilizing the digital truncation technique. By using the 6-bit ASAR quantizer, the sampling frequency is lowered, which reduces the design efforts not only in system level but also in the modulator. In addition, the ac-coupled push\u2013pull stage is employed to improve the high-frequency driving capability of the first integrator. Sampling at 65 MHz, the modulator achieves 83.4 dB dynamic range (DR) and 80/79.6 dB peak SNR/SNDR with 1.92 MHz bandwidth in WCDMA mode. In GSM/EDGE mode, the DR is 96.2 dB. Fabricated in 40-nm CMOS, the modulator occupies 0.051 mm and consumes 1.91 mW from a 1.2-V supply. A 64fJ/conv.-step figure of merit is achieved.\",\n  \"references\": [\n    {\n      \"ref_title\": \"A single-bit 500 kHz\u201310 MHz multimode power-performance scalable 83-to-67 dB DR CT for SDR in 90 nm digital CMOS\",\n      \"ref_authors\": [\n        \"P. Crombez\",\n        \"G. V. der Plas\",\n        \"M. S. J. Steyaert\",\n        \"J. Craninckx\"\n      ],\n      \"ref_year\": \"2010\",\n      \"ref_venue\": \"IEEE J. Solid State Circuits, vol. 45, no. 6, pp. 1159\u20131171, Jun.\"\n    },\n    {\n      \"ref_title\": \"A 2.8-to-8.5 mW GSM/bluetooth/UMTS/DVB-H/WLAN fully reconfigurable CT with 200 kHz to 20 MHz BW for 4 G radios in 90 nm digital CMOS\",\n      \"ref_authors\": [\n        \"Y. Ke\",\n        \"P. Gao\",\n        \"J. Craninckx\",\n        \"G. V. der Plas\",\n        \"G. Gielen\"\n      ],\n      \"ref_year\": \"2010\",\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits, Jun.\"\n    },\n    {\n      \"ref_title\": \"A 0.13 m CMOS 0.1\u201320 MHz bandwidth 86\u201370 dB DR multi-mode DT ADC for IMT-advanced\",\n      \"ref_authors\": [\n        \"T. Christen\",\n        \"Q. Huang\"\n      ],\n      \"ref_year\": \"2010\",\n      \"ref_venue\": \"Proc. IEEE ESSCIRC, Sep.\"\n    },\n    {\n      \"ref_title\": \"A 3-mW 74-dB SNR 2-MHz continuous-time delta-sigma ADC with a tracking ADC quantizer in 0.13- m CMOS\",\n      \"ref_authors\": [\n        \"L. Dorrer\",\n        \"F. Kuttner\",\n        \"P. Greco\",\n        \"P. Torta\",\n        \"T. Hartig\"\n      ],\n      \"ref_year\": \"2005\",\n      \"ref_venue\": \"IEEE J. Solid State Circuits, vol. 40, no. 12, pp. 2416\u20132427, Dec.\"\n    },\n    {\n      \"ref_title\": \"A 5th-order CT/DT multi-mode modulator\",\n      \"ref_authors\": [\n        \"B. Putter\"\n      ],\n      \"ref_year\": \"2007\",\n      \"ref_venue\": \"IEEE ISSCC Dig. Tech. Papers, Feb.\"\n    },\n    {\n      \"ref_title\": \"A 2.8 mW ADC with 83 dB DR and 1.92 MHz BW using FIR outer feedback and TIA-based integrator\",\n      \"ref_authors\": [\n        \"J. Gealow\",\n        \"M. Ashburn\",\n        \"C.-H. Lou\",\n        \"S. Ho\",\n        \"P. Riehl\",\n        \"A. Shabra\",\n        \"J. Silva\",\n        \"Q. Yu\"\n      ],\n      \"ref_year\": \"2011\",\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits, June\"\n    },\n    {\n      \"ref_title\": \"A 10 MHz BW 50 fJ/conv. continuous time modulator with high-order single Opamp integrator using optimization-based design method\",\n      \"ref_authors\": [\n        \"K. Matsukawa\",\n        \"K. Obata\",\n        \"Y. Mitani\",\n        \"S. Dosho\"\n      ],\n      \"ref_year\": \"2012\",\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits, Jun.\"\n    },\n    {\n      \"ref_title\": \"A 69.8 dB SNDR 3rd-order continuous time delta-sigma modulator with a ultimate low power tuning system for a worldwide digital TV-receiver,...\",\n      \"ref_authors\": [\n        \"K. Matsukawa\",\n        \"Y. Mitani\",\n        \"M. Takayama\",\n        \"K. Obata\",\n        \"Y. Tokunaga\",\n        \"S. Sakiyama\",\n        \"S. Dosho\"\n      ],\n      \"ref_year\": \"\",\n      \"ref_venue\": \"\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A 64-fJ/Conv.-Step Continuous-Time Modulator in 40-nm CMOS Using Asynchronous SAR Quantizer and Digital Truncator\",\n  \"authors\": [\n    \"Hung-Chieh Tsai\",\n    \"Chi-Lun Lo\",\n    \"Chen-Yen Ho\",\n    \"Yu-Hsin Lin\"\n  ],\n  \"affiliations\": [\n    \"MediaTek Inc., Hsin-Chu 30078, Taiwan\"\n  ],\n  \"abstract\": \"A third-order single-loop continuous-time sigma-delta modulator (CTSDM) with 6-bit asynchronous successive approximation register (ASAR) quantizer and digital truncator for WCDMA/GSM/EDG...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_64-fJ_Conv.-Step_Continuous-Time_Sigma_Delta_Modulator_in_40-nm_CMOS_Using_Asynchronous_SAR_Quantizer_and_Digital_Delta_Sigma_Truncator.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-27 23:58:04"
+  },
+  "A_Nyquist_Rate_SAR_ADC_Employing_Incremental_Sigma_Delta_DAC_Achieving_Peak_SFDR__107_dB_at_80_kS_s.pdf": {
+    "title": "A Nyquist Rate SAR ADC Employing Incremental Sigma Delta DAC Achieving Peak SFDR = 107 dB at 80 kS/s",
+    "authors": [
+      "Ahmad AlMarashli",
+      "Jens Anders",
+      "Joachim Becker",
+      "Maurits Ortmanns"
+    ],
+    "affiliations": [
+      "IFM, University of Ulm, D-89081 Ulm, Germany",
+      "IFM, University of Ulm, D-89081 Ulm, Germany",
+      "IFM, University of Ulm, D-89081 Ulm, Germany",
+      "IFM, University of Ulm, D-89081 Ulm, Germany"
+    ],
+    "abstract": "This paper introduces an architecture and design for high-resolution high-linearity Nyquist rate successive approximation register (SAR) analog-to-digital converters (ADCs) using a hybrid capacitive and incremental \u03a3\u0394 digital-to-analog converter (DAC). The proposed architecture benefits from an intrinsically linear 1.5-bit \u03a3\u0394 DAC to resolve the fine bits of the SAR ADC after a coarse conversion phase with a monotonically switched capacitive DAC (CDAC). The achieved linearity relies neither on a highly matched CDAC nor on any dynamic linearization techniques but on a single calibration of the coarse CDAC using the available \u03a3\u0394 DAC at startup. Therefore, the CDAC can be sized solely upon noise requirements. The SAR ADC employs two parallel dynamic comparators for improved power efficiency. A prototype was fabricated in a 40-nm CMOS, with power supplies of 1.1 and 2.5 V. It occupies an active area of only 0.074 mm\u00b2. The prototype achieves a measured peak spurious free dynamic range (SFDR) of 107 dB and peak signal to noise and distortion ratio (SNDR) of 84.8 dB at 80-kS/s Nyquist rate operation with 5.3-kHz input. The measured performance at the Nyquist frequency, limited by signal source quality, is SFDR = 99.5 dB and SNDR = 83.5 dB. The core power consumption is 110 \u03bcW. In oversampling mode, the ADC achieves an SNDR above 90 dB over a 5-kHz bandwidth.",
+    "references": [],
+    "llm_usage": {
+      "timestamp": "2025-05-28 00:01:17",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 26390,
+      "input_text_preview": "IEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 53, NO. 5, MAY 2018\n1493\nA Nyquist Rate SAR ADC Employing\nIncremental Sigma Delta DAC Achieving Peak\nSFDR = 107 dB at 80 kS/s\nAhmad AlMarashli\n, Student Member, IEEE, Jens Anders, Senior Member, IEEE,\nJoachim Becker, Senior Member, IEEE, and Maurits Ortmanns, Senior Member, IEEE\nAbstract\u2014This paper introduces an architecture and design\nfor high-resolution high-linearity Nyquist rate successive approx-\nimation register (SAR) analog-to-digital converters ...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 130.37,
+      "completion_tokens": 4178,
+      "prompt_tokens": 2847,
+      "total_tokens": 7025,
+      "response_full": "\n\n{\n  \"title\": \"A Nyquist Rate SAR ADC Employing Incremental Sigma Delta DAC Achieving Peak SFDR = 107 dB at 80 kS/s\",\n  \"authors\": [\n    \"Ahmad AlMarashli\",\n    \"Jens Anders\",\n    \"Joachim Becker\",\n    \"Maurits Ortmanns\"\n  ],\n  \"affiliations\": [\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\",\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\",\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\",\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\"\n  ],\n  \"abstract\": \"This paper introduces an architecture and design for high-resolution high-linearity Nyquist rate successive approximation register (SAR) analog-to-digital converters (ADCs) using a hybrid capacitive and incremental \u03a3\u0394 digital-to-analog converter (DAC). The proposed architecture benefits from an intrinsically linear 1.5-bit \u03a3\u0394 DAC to resolve the fine bits of the SAR ADC after a coarse conversion phase with a monotonically switched capacitive DAC (CDAC). The achieved linearity relies neither on a highly matched CDAC nor on any dynamic linearization techniques but on a single calibration of the coarse CDAC using the available \u03a3\u0394 DAC at startup. Therefore, the CDAC can be sized solely upon noise requirements. The SAR ADC employs two parallel dynamic comparators for improved power efficiency. A prototype was fabricated in a 40-nm CMOS, with power supplies of 1.1 and 2.5 V. It occupies an active area of only 0.074 mm\u00b2. The prototype achieves a measured peak spurious free dynamic range (SFDR) of 107 dB and peak signal to noise and distortion ratio (SNDR) of 84.8 dB at 80-kS/s Nyquist rate operation with 5.3-kHz input. The measured performance at the Nyquist frequency, limited by signal source quality, is SFDR = 99.5 dB and SNDR = 83.5 dB. The core power consumption is 110 \u03bcW. In oversampling mode, the ADC achieves an SNDR above 90 dB over a 5-kHz bandwidth.\",\n  \"references\": []\n}",
+      "response_preview": "\n\n{\n  \"title\": \"A Nyquist Rate SAR ADC Employing Incremental Sigma Delta DAC Achieving Peak SFDR = 107 dB at 80 kS/s\",\n  \"authors\": [\n    \"Ahmad AlMarashli\",\n    \"Jens Anders\",\n    \"Joachim Becker\",\n    \"Maurits Ortmanns\"\n  ],\n  \"affiliations\": [\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\",\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\",\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\",\n    \"IFM, University of Ulm, D-89081 Ulm, Germany\"\n  ],\n  \"abstract\": \"This paper introduces an a...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/A_Nyquist_Rate_SAR_ADC_Employing_Incremental_Sigma_Delta_DAC_Achieving_Peak_SFDR__107_dB_at_80_kS_s.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-28 00:03:27"
+  },
+  "A_Temperature-Stabilized_Single-Channel_1-GS_s_60-dB_SNDR_SAR-Assisted_Pipelined_ADC_With_Dynamic_Gm-R-Based_Amplifier.pdf": {
+    "llm_usage": {
+      "timestamp": "2025-05-28 00:03:27",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 21379,
+      "input_text_preview": "322\nIEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 55, NO. 2, FEBRUARY 2020\nA Temperature-Stabilized Single-Channel 1-GS/s\n60-dB SNDR SAR-Assisted Pipelined ADC With\nDynamic Gm-R-Based Ampli\ufb01er\nWenning Jiang, Student Member, IEEE, Yan Zhu\n, Member, IEEE, Minglei Zhang\n, Member, IEEE,\nChi-Hang Chan\n, Member, IEEE, and Rui Paulo Martins\n, Fellow, IEEE\nAbstract\u2014A\ntemperature-stabilized\n12-bit\nsingle-channel\nsuccessive\napproximation\nregister\n(SAR)-assisted\npipelined\nanalog-to-digital converter (ADC) run...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 278.29,
+      "completion_tokens": 8843,
+      "prompt_tokens": 3445,
+      "total_tokens": 12288,
+      "response_full": "\n\n{\n  \"title\": \"A Temperature-Stabilized Single-Channel 1-GS/s 60-dB SNDR SAR-Assisted Pipelined ADC With Dynamic Gm-R-Based Ampli\ufb01er\",\n  \"authors\": [\n    \"Wenning Jiang\",\n    \"Yan Zhu\",\n    \"Minglei Zhang\",\n    \"Chi-Hang Chan\",\n    \"Rui Paulo Martins\"\n  ],\n  \"affiliations\": [\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Department of Electrical and Computer Engineering, Faculty of Science and Technology, Institute of Microelectronics, University of Macau, Macao 999078, China\",\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Department of Electrical and Computer Engineering, Faculty of Science and Technology, Institute of Microelectronics, University of Macau, Macao 9990",
+      "response_preview": "\n\n{\n  \"title\": \"A Temperature-Stabilized Single-Channel 1-GS/s 60-dB SNDR SAR-Assisted Pipelined ADC With Dynamic Gm-R-Based Ampli\ufb01er\",\n  \"authors\": [\n    \"Wenning Jiang\",\n    \"Yan Zhu\",\n    \"Minglei Zhang\",\n    \"Chi-Hang Chan\",\n    \"Rui Paulo Martins\"\n  ],\n  \"affiliations\": [\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Department of Electrical and Computer Engineering, Faculty of Science and Technology, Institute of Microelectronics, University of Macau, Macao 999078, China\",\n   ...",
+      "success": true,
+      "error": "Failed to parse JSON response"
+    },
+    "source_pdf": "paper/ADC/A_Temperature-Stabilized_Single-Channel_1-GS_s_60-dB_SNDR_SAR-Assisted_Pipelined_ADC_With_Dynamic_Gm-R-Based_Amplifier.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-28 00:08:06"
+  },
+  "An_85_dB_DR_4_MHz_BW_Pipelined_Noise-Shaping_SAR_ADC_With_12_MASH_Structure.pdf": {
+    "title": "An 85 dB DR 4 MHz BW Pipelined Noise-Shaping SAR ADC With 1-2 MASH Structure",
+    "authors": [
+      "Sein Oh",
+      "Younggyun Oh",
+      "Juyong Lee",
+      "Kihyun Kim",
+      "Seungjun Lee",
+      "Jintae Kim",
+      "Hyungil Chae"
+    ],
+    "affiliations": [
+      "Department of Electrical Engineering, Korea Advanced Institute of Science and Technology (KAIST), Daejeon 34141, South Korea",
+      "Department of Electrical Engineering, Kookmin University, Seoul 02707, South Korea",
+      "Department of Electrical Engineering, Konkuk University, Seoul 05029, South Korea"
+    ],
+    "abstract": "A pipelined noise-shaping successive approximation register (NS-SAR) ADC with 1-2 multistage noise-shaping (MASH) structure is presented. Two-stage pipelined structure consisting of 5 bit NS-SAR and 4 bit NS-SAR quantizers enables 3rd-order noise-shaping. A single operational transconductance amplifier (OTA) is shared by an integrator for noise-shaping and a residue amplifier for pipelining to maximize the power efficiency. The measured dynamic range (DR) is 84.6 dB when the sampling rate is 83.3 MS/s, bandwidth is 4 MHz, and power consumption is 3.5 mW showing Schreier figure-of-merit (FoMS,DR) of 175.2 dB. The proposed ADC structure greatly relaxes design requirement of each SAR quantizer and can achieve high resolution and wide bandwidth with good power efficiency.",
+    "references": [
+      {
+        "ref_title": "An 80-dB DR, 7.2-MHz bandwidth single opamp biquad based CT \u0394\u03a3 modulator dissipating 13.7-mW",
+        "ref_authors": [
+          "R. Zanbaghi",
+          "P. K. Hanumolu",
+          "T. S. Fiez"
+        ],
+        "ref_year": "2013",
+        "ref_venue": "IEEE Journal of Solid-State Circuits",
+        "download_path": "output/downloads/An_80-dB_DR,_7.2-MHz_Bandwidth_Single_Opamp_Biquad_Based_CT_$Delta_Sigma$_Modulator_Dissipating_10.1109_jssc.2012.2221194.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:12:01",
+        "found_doi": "10.1109/jssc.2012.2221194"
+      },
+      {
+        "ref_title": "A 4.5 mW CT self-coupled \u0394\u03a3 modulator with 2.2 MHz BW and 90.4 dB SNDR using residual ELD compensation",
+        "ref_authors": [
+          "C.-Y. Ho",
+          "C. Liu",
+          "C.-L. Lo",
+          "H.-C. Tsai",
+          "T.-C. Wang",
+          "Y.-H. Lin"
+        ],
+        "ref_year": "2015",
+        "ref_venue": "IEEE Journal of Solid-State Circuits",
+        "download_path": "output/downloads/A_4.5_mW_CT_Self-Coupled_$DeltaSigma$_Modulator_With_2.2_MHz_BW_and_90.4_dB_10.1109_jssc.2015.2475160.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:12:59",
+        "found_doi": "10.1109/jssc.2015.2475160"
+      },
+      {
+        "ref_title": "An 8.1 mW, 82 dB delta-sigma ADC with 1.9 MHz BW and \u221298 dB THD",
+        "ref_authors": [
+          "K. Lee",
+          "M. R. Miller",
+          "G. C. Temes"
+        ],
+        "ref_year": "2009",
+        "ref_venue": "IEEE Journal of Solid-State Circuits",
+        "download_path": "output/downloads/An_8.1_mW,_82_dB_delta-sigma_ADC_with_1.9_MHz_BW_and_\u221298_dB_10.1109_cicc.2008.4672029.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:13:09",
+        "found_doi": "10.1109/cicc.2008.4672029"
+      },
+      {
+        "ref_title": "A 5 MHz-BW, 86.1 dB-SNDR 4X time-interleaved 2nd-order \u0394\u03a3 modulator with digital feedforward extrapolation in 28 nm CMOS",
+        "ref_authors": [
+          "D. Jiang",
+          "L. Qi",
+          "S.-W. Sin",
+          "F. Maloberti",
+          "R. P. Martins"
+        ],
+        "ref_year": "2020",
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits",
+        "download_path": "output/downloads/A_5MHz-BW,_86.1dB-SNDR_4X_Time-Interleaved_2nd-Order_\u0394\u03a3_Modulator_with_Digital_Feedforward_Extrapola_10.1109_vlsicircuits18222.2020.9162798.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:13:26",
+        "found_doi": "10.1109/vlsicircuits18222.2020.9162798"
+      },
+      {
+        "ref_title": "A 12-b ENOB 2.5-MHz BW VCO-based 0-1 MASH ADC with direct digital background calibration",
+        "ref_authors": [
+          "K. Ragab",
+          "N. Sun"
+        ],
+        "ref_year": "2017",
+        "ref_venue": "IEEE Journal of Solid-State Circuits",
+        "download_path": "output/downloads/10.1109jssc.2016.2615321_10.1109_jssc.2016.2615321.pdf",
+        "download_success": true,
+        "download_status": "downloaded",
+        "download_timestamp": "2025-05-28 00:13:38",
+        "found_doi": "10.1109/jssc.2016.2615321"
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-28 00:08:06",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 17187,
+      "input_text_preview": "3424\nIEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 56, NO. 11, NOVEMBER 2021\nAn 85 dB DR 4 MHz BW Pipelined Noise-Shaping\nSAR ADC With 1-2 MASH Structure\nSein Oh\n, Student Member, IEEE, Younggyun Oh, Juyong Lee, Kihyun Kim, Seungjun Lee,\nJintae Kim\n, Senior Member, IEEE, and Hyungil Chae\nAbstract\u2014A pipelined noise-shaping successive approximation\nregister\n(NS-SAR) ADC with 1-2 multistage\nnoise-shaping\n(MASH) structure is presented. Two-stage pipelined structure\nconsisting of 5 bit NS-SAR and 4 bit ...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 215.05,
+      "completion_tokens": 6803,
+      "prompt_tokens": 3374,
+      "total_tokens": 10177,
+      "response_full": "\n\n{\n  \"title\": \"An 85 dB DR 4 MHz BW Pipelined Noise-Shaping SAR ADC With 1-2 MASH Structure\",\n  \"authors\": [\n    \"Sein Oh\",\n    \"Younggyun Oh\",\n    \"Juyong Lee\",\n    \"Kihyun Kim\",\n    \"Seungjun Lee\",\n    \"Jintae Kim\",\n    \"Hyungil Chae\"\n  ],\n  \"affiliations\": [\n    \"Department of Electrical Engineering, Korea Advanced Institute of Science and Technology (KAIST), Daejeon 34141, South Korea\",\n    \"Department of Electrical Engineering, Kookmin University, Seoul 02707, South Korea\",\n    \"Department of Electrical Engineering, Konkuk University, Seoul 05029, South Korea\"\n  ],\n  \"abstract\": \"A pipelined noise-shaping successive approximation register (NS-SAR) ADC with 1-2 multistage noise-shaping (MASH) structure is presented. Two-stage pipelined structure consisting of 5 bit NS-SAR and 4 bit NS-SAR quantizers enables 3rd-order noise-shaping. A single operational transconductance amplifier (OTA) is shared by an integrator for noise-shaping and a residue amplifier for pipelining to maximize the power efficiency. The measured dynamic range (DR) is 84.6 dB when the sampling rate is 83.3 MS/s, bandwidth is 4 MHz, and power consumption is 3.5 mW showing Schreier figure-of-merit (FoMS,DR) of 175.2 dB. The proposed ADC structure greatly relaxes design requirement of each SAR quantizer and can achieve high resolution and wide bandwidth with good power efficiency.\",\n  \"references\": [\n    {\n      \"ref_title\": \"An 80-dB DR, 7.2-MHz bandwidth single opamp biquad based CT \u0394\u03a3 modulator dissipating 13.7-mW\",\n      \"ref_authors\": [\"R. Zanbaghi\", \"P. K. Hanumolu\", \"T. S. Fiez\"],\n      \"ref_year\": \"2013\",\n      \"ref_venue\": \"IEEE Journal of Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 4.5 mW CT self-coupled \u0394\u03a3 modulator with 2.2 MHz BW and 90.4 dB SNDR using residual ELD compensation\",\n      \"ref_authors\": [\"C.-Y. Ho\", \"C. Liu\", \"C.-L. Lo\", \"H.-C. Tsai\", \"T.-C. Wang\", \"Y.-H. Lin\"],\n      \"ref_year\": \"2015\",\n      \"ref_venue\": \"IEEE Journal of Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"An 8.1 mW, 82 dB delta-sigma ADC with 1.9 MHz BW and \u221298 dB THD\",\n      \"ref_authors\": [\"K. Lee\", \"M. R. Miller\", \"G. C. Temes\"],\n      \"ref_year\": \"2009\",\n      \"ref_venue\": \"IEEE Journal of Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 5 MHz-BW, 86.1 dB-SNDR 4X time-interleaved 2nd-order \u0394\u03a3 modulator with digital feedforward extrapolation in 28 nm CMOS\",\n      \"ref_authors\": [\"D. Jiang\", \"L. Qi\", \"S.-W. Sin\", \"F. Maloberti\", \"R. P. Martins\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits\"\n    },\n    {\n      \"ref_title\": \"A 12-b ENOB 2.5-MHz BW VCO-based 0-1 MASH ADC with direct digital background calibration\",\n      \"ref_authors\": [\"K. Ragab\", \"N. Sun\"],\n      \"ref_year\": \"2017\",\n      \"ref_venue\": \"IEEE Journal of Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 18.5-fJ/step VCO-based 0\u20131 MASH \u0394\u03a3 ADC with digital background calibration\",\n      \"ref_authors\": [\"A. Sanyal\", \"N. Sun\"],\n      \"ref_year\": \"2016\",\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits (VLSI-Circuits)\"\n    },\n    {\n      \"ref_title\": \"A 40-MHz bandwidth 0\u20132 MAS...\",\n      \"ref_authors\": [\"P. Zhu\", \"X. Xing\", \"G. Gielen\"],\n      \"ref_year\": \"\",\n      \"ref_venue\": \"\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"An 85 dB DR 4 MHz BW Pipelined Noise-Shaping SAR ADC With 1-2 MASH Structure\",\n  \"authors\": [\n    \"Sein Oh\",\n    \"Younggyun Oh\",\n    \"Juyong Lee\",\n    \"Kihyun Kim\",\n    \"Seungjun Lee\",\n    \"Jintae Kim\",\n    \"Hyungil Chae\"\n  ],\n  \"affiliations\": [\n    \"Department of Electrical Engineering, Korea Advanced Institute of Science and Technology (KAIST), Daejeon 34141, South Korea\",\n    \"Department of Electrical Engineering, Kookmin University, Seoul 02707, South Korea\",\n    \"Department...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/An_85_dB_DR_4_MHz_BW_Pipelined_Noise-Shaping_SAR_ADC_With_12_MASH_Structure.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-28 00:11:41"
+  },
+  "An_ELDC-Free_4th-Order_CT_SDM_Facilitated_by_2nd-Order_NS_CT-SAR_and_AC-Coupled_Negative-R.pdf": {
+    "title": "An ELDC-Free 4th-Order CT SDM Facilitated by 2nd-Order NS CT-SAR and AC-Coupled Negative-R",
+    "authors": [
+      "Zixuan Xu",
+      "Kai Xing",
+      "Yan Zhu",
+      "Rui P. Martins",
+      "Chi-Hang Chan"
+    ],
+    "affiliations": [
+      "State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China",
+      "State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China",
+      "State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China",
+      "State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China",
+      "State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China; Instituto Superior T\u00e9cnico, Universidade de Lisboa, 1049-001 Lisbon, Portugal"
+    ],
+    "abstract": "This article presents an excess loop delay compensation (ELDC) free 20 MHz bandwidth (BW) fourth-order continuous-time sigma-delta modulator (CT SDM) facilitated by a noise-shaping continuous-time successive-approximation register (NS CT-SAR) ADC. The modulator comprises a second-order single amplifier biquad (SAB) loop filter (LF) and a second-order NS CT-SAR with a passive integrator. The NS CT-SAR provides a stable second-order NS with a dedicated reset operation to ensure a robust input biasing for its CT interface. With ping-pong operation in the passive integrator, the delay of the 6b CT quantizer (QTZ) with 1b redundancy reduces to only one SA cycle, thus enabling the ELDC-free design. An ac-coupled negative-R is introduced to support the SAB integrator, which achieves low power and maintains a stable performance at band-edge input. The prototype is fabricated in 28-nm CMOS technology, occupying an active area of 0.037 mm2. It achieves 75.5-dB SNDR with 20 MHz BW at 750 MHz sampling frequency while consuming 2.78 mW from 1.5 to 1 V supply voltage. The proposed SDM yields a Walden figure-of-merit (FoMw) of 14.3 fJ/conversion step and a Schreier FOM (FoMS) of 174.1 dB, which are competitive among single loop architectures with similar sampling frequency and BW, while this design is ELDC-free.",
+    "references": [
+      {
+        "ref_title": "A 10.4 mW 50 MHz-BW 80 dB-DR single-opamp third-order CTSDM with SAB-ELD-merged integrator and 3-stage opamp",
+        "ref_authors": [
+          "K. Xing",
+          "W. Wang",
+          "Y. Zhu",
+          "C.-H. Chan",
+          "R. P. Martins"
+        ],
+        "ref_year": "2020",
+        "ref_venue": "Proc. IEEE Symp. VLSI Circuits"
+      },
+      {
+        "ref_title": "10.4 A 3.7 mW 12.5 MHz 81 dB-SNDR 4th-order CTDSM with single-OTA and 2nd-order NS-SAR",
+        "ref_authors": [
+          "W. Shi et al."
+        ],
+        "ref_year": "2021",
+        "ref_venue": "IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers"
+      },
+      {
+        "ref_title": "A 100-MHz BW 72.6-dB-SNDR CT 16 modulator utilizing preliminary sampling and quantization",
+        "ref_authors": [
+          "W. Wang",
+          "C.-H. Chan",
+          "Y. Zhu",
+          "R. P. Martins"
+        ],
+        "ref_year": "2020",
+        "ref_venue": "IEEE J. Solid-State Circuits"
+      },
+      {
+        "ref_title": "A 71.4 dB SNDR 30 MHz BW continuous-time delta\u2013sigma modulator using a time-interleaved noise-shaping quantizer in 12-nm CMOS",
+        "ref_authors": [
+          "C.-H. Weng",
+          "T.-A. Wei",
+          "H.-Y. Hsieh",
+          "S.-H. Wu",
+          "T.-Y. Wang"
+        ],
+        "ref_year": "2019",
+        "ref_venue": "Proc. Symp. VLSI Circuits"
+      },
+      {
+        "ref_title": "A low-noise low-voltage CT 16 modulator with digital compensation of excess loop delay",
+        "ref_authors": [
+          "P. Fontaine",
+          "A. N. Mohieldin",
+          "A. Bellaouar"
+        ],
+        "ref_year": "2005",
+        "ref_venue": "IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers"
+      },
+      {
+        "ref_title": "A comparative study on excess-loop-delay compensation techniques for continuous-time sigma\u2013delta modulators",
+        "ref_authors": [
+          "M. Keller",
+          "A. Buhmann",
+          "J. Sauerbrey",
+          "M. Ortmanns",
+          "Y. Manoli"
+        ],
+        "ref_year": "2008",
+        "ref_venue": "IEEE Trans. Circuits Syst. I, Reg. Papers"
+      },
+      {
+        "ref_title": "A 28 fJ/conv-step CT 16 modulator with 78 dB DR and 18 MHz BW in 28 nm...",
+        "ref_authors": [
+          "Y.-S. Shu",
+          "J.-Y. Tsai",
+          "P. Chen",
+          "T.-Y. Lo",
+          "P.-C. Chiu"
+        ],
+        "ref_year": "",
+        "ref_venue": ""
+      }
+    ],
+    "llm_usage": {
+      "timestamp": "2025-05-28 00:09:36",
+      "model": "/data/home/lizhijun/nctieda_work/block_generate/models/qwq",
+      "input_text_length": 21715,
+      "input_text_preview": "IEEE JOURNAL OF SOLID-STATE CIRCUITS, VOL. 59, NO. 3, MARCH 2024\n753\nAn ELDC-Free 4th-Order CT SDM Facilitated by\n2nd-Order NS CT-SAR and\nAC-Coupled Negative-R\nZixuan Xu , Graduate Student Member, IEEE, Kai Xing , Member, IEEE, Yan Zhu , Senior Member, IEEE,\nRui P. Martins , Life Fellow, IEEE, and Chi-Hang Chan , Senior Member, IEEE\nAbstract\u2014 This article presents an excess loop delay com-\npensation (ELDC) free 20 MHz bandwidth (BW) fourth-order\ncontinuous-time sigma-delta modulator (CT SDM) fac...",
+      "prompt_template": "\nExtract the following information from this academic paper as JSON:\n\n- title: The paper's full title\n- authors: List of authors' names\n- affiliations: List of author affiliations\n- abstract: The paper's abstract\n- references: List of references with the following details for each reference:\n  - ref_title: Full title of the referenced paper (IMPORTANT: provide complete titles)\n  - ref_authors: List of authors of the referenced paper\n  - ref_year: Publication year\n  - ref_venue: Publication venue (journal/conference)\n\nIMPORTANT INSTRUCTIONS:\n1. Pay special attention to the References or Bibliography section at the end of the paper\n2. Extract ALL references you can find, even if the paper text is truncated\n3. For each reference, ensure you capture the complete title - this is crucial\n4. Return ONLY valid JSON with no additional text or formatting\n5. If you cannot find certain information, use empty strings or arrays rather than omitting fields\n\nPAPER TEXT:\n[PAPER_TEXT]\n",
+      "api_call_seconds": 260.66,
+      "completion_tokens": 6157,
+      "prompt_tokens": 3281,
+      "total_tokens": 9438,
+      "response_full": "\n\n{\n  \"title\": \"An ELDC-Free 4th-Order CT SDM Facilitated by 2nd-Order NS CT-SAR and AC-Coupled Negative-R\",\n  \"authors\": [\n    \"Zixuan Xu\",\n    \"Kai Xing\",\n    \"Yan Zhu\",\n    \"Rui P. Martins\",\n    \"Chi-Hang Chan\"\n  ],\n  \"affiliations\": [\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China\",\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China\",\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China\",\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China\",\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China; Instituto Superior T\u00e9cnico, Universidade de Lisboa, 1049-001 Lisbon, Portugal\"\n  ],\n  \"abstract\": \"This article presents an excess loop delay compensation (ELDC) free 20 MHz bandwidth (BW) fourth-order continuous-time sigma-delta modulator (CT SDM) facilitated by a noise-shaping continuous-time successive-approximation register (NS CT-SAR) ADC. The modulator comprises a second-order single amplifier biquad (SAB) loop filter (LF) and a second-order NS CT-SAR with a passive integrator. The NS CT-SAR provides a stable second-order NS with a dedicated reset operation to ensure a robust input biasing for its CT interface. With ping-pong operation in the passive integrator, the delay of the 6b CT quantizer (QTZ) with 1b redundancy reduces to only one SA cycle, thus enabling the ELDC-free design. An ac-coupled negative-R is introduced to support the SAB integrator, which achieves low power and maintains a stable performance at band-edge input. The prototype is fabricated in 28-nm CMOS technology, occupying an active area of 0.037 mm2. It achieves 75.5-dB SNDR with 20 MHz BW at 750 MHz sampling frequency while consuming 2.78 mW from 1.5 to 1 V supply voltage. The proposed SDM yields a Walden figure-of-merit (FoMw) of 14.3 fJ/conversion step and a Schreier FOM (FoMS) of 174.1 dB, which are competitive among single loop architectures with similar sampling frequency and BW, while this design is ELDC-free.\",\n  \"references\": [\n    {\n      \"ref_title\": \"A 10.4 mW 50 MHz-BW 80 dB-DR single-opamp third-order CTSDM with SAB-ELD-merged integrator and 3-stage opamp\",\n      \"ref_authors\": [\"K. Xing\", \"W. Wang\", \"Y. Zhu\", \"C.-H. Chan\", \"R. P. Martins\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"Proc. IEEE Symp. VLSI Circuits\"\n    },\n    {\n      \"ref_title\": \"10.4 A 3.7 mW 12.5 MHz 81 dB-SNDR 4th-order CTDSM with single-OTA and 2nd-order NS-SAR\",\n      \"ref_authors\": [\"W. Shi et al.\"],\n      \"ref_year\": \"2021\",\n      \"ref_venue\": \"IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"A 100-MHz BW 72.6-dB-SNDR CT 16 modulator utilizing preliminary sampling and quantization\",\n      \"ref_authors\": [\"W. Wang\", \"C.-H. Chan\", \"Y. Zhu\", \"R. P. Martins\"],\n      \"ref_year\": \"2020\",\n      \"ref_venue\": \"IEEE J. Solid-State Circuits\"\n    },\n    {\n      \"ref_title\": \"A 71.4 dB SNDR 30 MHz BW continuous-time delta\u2013sigma modulator using a time-interleaved noise-shaping quantizer in 12-nm CMOS\",\n      \"ref_authors\": [\"C.-H. Weng\", \"T.-A. Wei\", \"H.-Y. Hsieh\", \"S.-H. Wu\", \"T.-Y. Wang\"],\n      \"ref_year\": \"2019\",\n      \"ref_venue\": \"Proc. Symp. VLSI Circuits\"\n    },\n    {\n      \"ref_title\": \"A low-noise low-voltage CT 16 modulator with digital compensation of excess loop delay\",\n      \"ref_authors\": [\"P. Fontaine\", \"A. N. Mohieldin\", \"A. Bellaouar\"],\n      \"ref_year\": \"2005\",\n      \"ref_venue\": \"IEEE Int. Solid-State Circuits Conf. (ISSCC) Dig. Tech. Papers\"\n    },\n    {\n      \"ref_title\": \"A comparative study on excess-loop-delay compensation techniques for continuous-time sigma\u2013delta modulators\",\n      \"ref_authors\": [\"M. Keller\", \"A. Buhmann\", \"J. Sauerbrey\", \"M. Ortmanns\", \"Y. Manoli\"],\n      \"ref_year\": \"2008\",\n      \"ref_venue\": \"IEEE Trans. Circuits Syst. I, Reg. Papers\"\n    },\n    {\n      \"ref_title\": \"A 28 fJ/conv-step CT 16 modulator with 78 dB DR and 18 MHz BW in 28 nm...\",\n      \"ref_authors\": [\"Y.-S. Shu\", \"J.-Y. Tsai\", \"P. Chen\", \"T.-Y. Lo\", \"P.-C. Chiu\"],\n      \"ref_year\": \"\",\n      \"ref_venue\": \"\"\n    }\n  ]\n}",
+      "response_preview": "\n\n{\n  \"title\": \"An ELDC-Free 4th-Order CT SDM Facilitated by 2nd-Order NS CT-SAR and AC-Coupled Negative-R\",\n  \"authors\": [\n    \"Zixuan Xu\",\n    \"Kai Xing\",\n    \"Yan Zhu\",\n    \"Rui P. Martins\",\n    \"Chi-Hang Chan\"\n  ],\n  \"affiliations\": [\n    \"State Key Laboratory of Analog and Mixed Signal VLSI, Institute of Microelectronics, Department of Electrical and Computer Engineering, Faculty of Science and Technology, University of Macau, Macau, China\",\n    \"State Key Laboratory of Analog and Mixed Sig...",
+      "success": true
+    },
+    "source_pdf": "paper/ADC/An_ELDC-Free_4th-Order_CT_SDM_Facilitated_by_2nd-Order_NS_CT-SAR_and_AC-Coupled_Negative-R.pdf",
+    "processing_depth": 0,
+    "timestamp": "2025-05-28 00:13:56"
+  }
+}
