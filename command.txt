@@ -1,0 +1,8 @@
+
+vllm serve /data/home/lizhijun/.cache/huggingface/hub/models--Qwen--QwQ-32B --dtype bfloat16 --tensor-parallel-size 2 --max-model-len 4096
+
+
+python main.py --input-dir paper/ADC --output-dir ./output --api-base https://ark.cn-beijing.volces.com/api/v3 --api-key YOUR_KEY --model deepseek-v3-241226 
+
+
+nohup python main.py --input-dir paper/ADC --output-dir ./output --api-base http://0.0.0.0:8001/v1 --api-key 111 --model /data/home/lizhijun/nctieda_work/block_generate/models/qwq --text-ratio 10,30 > runoob.log 2>&1 &
