@@ -1,8 +1,18 @@
 
-vllm serve /data/home/lizhijun/.cache/huggingface/hub/models--Qwen--QwQ-32B --dtype bfloat16 --tensor-parallel-size 2 --max-model-len 4096
-
+vllm serve /data/home/lizhijun/nctieda_work/block_generate/models/qwq \
+   --served-model-name QwQ-32B \
+   --enable-reasoning \
+   --reasoning-parser deepseek_r1 \
+   --tensor-parallel-size 2 \
+   --dtype bfloat16 \
+   --max-model-len 12288 \
+   --port 8001
 
 python main.py --input-dir paper/ADC --output-dir ./output --api-base https://ark.cn-beijing.volces.com/api/v3 --api-key YOUR_KEY --model deepseek-v3-241226 
 
 
-nohup python main.py --input-dir paper/ADC --output-dir ./output --api-base http://0.0.0.0:8001/v1 --api-key 111 --model /data/home/lizhijun/nctieda_work/block_generate/models/qwq --text-ratio 10,30 > runoob.log 2>&1 &
+nohup python main.py --input-dir paper/ADC --output-dir ./output/ADC --api-base http://0.0.0.0:8001/v1 --api-key 111 --model QwQ-32B --text-ratio 10,30 > adc.log 2>&1 &
+
+nohup python main.py --input-dir paper/DAC --output-dir ./output/DAC --api-base http://0.0.0.0:8001/v1 --api-key 111 --model QwQ-32B --text-ratio 10,30 > dac.log 2>&1 &
+
+nohup python main.py --input-dir paper/PLL --output-dir ./output/PLL --api-base http://0.0.0.0:8001/v1 --api-key 111 --model QwQ-32B --text-ratio 10,30 > pll.log 2>&1 &
