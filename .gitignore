@@ -1,0 +1,5 @@
+output
+paper
+src/__pycache__
+paper_crawler.log
+command.txt
