@@ -6,3 +6,4 @@ command.txt
 *.log
 output-v3
 *.txt
+__pycache__
