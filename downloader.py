@@ -12,8 +12,8 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 import random
 
-from config import (DEFAULT_OUTPUT_DIR, DOWNLOAD_QUEUE_FILE, 
-                   DOWNLOAD_RESULTS_FILE)
+# 导入但不立即使用配置
+import config
 from utils import load_json, save_json, get_timestamp_str, Locker
 from doi_helper import download as doi_download
 
@@ -31,25 +31,28 @@ class PaperDownloader:
     def __init__(self, output_dir, max_workers=4, retry_failed=False, delay_between=2):
         """Initialize the paper downloader."""
         self.output_dir = Path(output_dir)
-        self.download_dir = self.output_dir / "downloads"
+        # 下载目录从配置获取
+        paths = config.get_configured_paths()
+        self.download_dir = Path(paths["download_dir"])
         self.download_dir.mkdir(parents=True, exist_ok=True)
         
         # Processing settings
         self.max_workers = max_workers
         self.retry_failed = retry_failed
-        self.delay_between = delay_between  # Seconds between downloads
+        self.delay_between = delay_between
         
         # Load state
-        self.download_queue = load_json(DOWNLOAD_QUEUE_FILE, [])
-        self.download_results = load_json(DOWNLOAD_RESULTS_FILE, {})
+        self.download_queue = load_json(paths["download_queue_file"], [])
+        self.download_results = load_json(paths["download_results_file"], {})
         
         self.lock = threading.Lock()
         
     def save_state(self):
         """Save current state to files."""
+        paths = config.get_configured_paths()
         with self.lock:
-            save_json(self.download_queue, DOWNLOAD_QUEUE_FILE)
-            save_json(self.download_results, DOWNLOAD_RESULTS_FILE)
+            save_json(self.download_queue, paths["download_queue_file"])
+            save_json(self.download_results, paths["download_results_file"])
     
     def get_pending_downloads(self):
         """Get list of pending downloads."""
@@ -185,21 +188,21 @@ class PaperDownloader:
         # Final save
         self.save_state()
 
-
 def main():
     # Define command line arguments
     parser = argparse.ArgumentParser(description='Academic Paper Downloader')
-    parser.add_argument('--output-dir', default=DEFAULT_OUTPUT_DIR, help='Base directory for all outputs')
+    parser.add_argument('--output-dir', required=True, help='Directory to store output files')
     parser.add_argument('--max-workers', type=int, default=4, help='Maximum number of parallel downloads')
     parser.add_argument('--retry-failed', action='store_true', help='Retry previously failed downloads')
     parser.add_argument('--delay', type=float, default=2.0, help='Delay between downloads in seconds')
     
     args = parser.parse_args()
     
-    # 重要：更新路径配置以使用指定的输出目录
-    from config import set_paths
-    paths = set_paths(None, args.output_dir)
-    logger.info(f"使用输出路径: {paths['output_dir']}")
+    # 最重要：先配置路径，这要在任何其他操作之前
+    # 设置空的输入目录，因为下载器只需要输出目录
+    config.configure_paths("", args.output_dir)
+    paths = config.get_configured_paths()
+    logger.info(f"配置下载路径: 输出={paths['output_dir']}, 下载={paths['download_dir']}")
     
     # Initialize and run downloader
     try:
