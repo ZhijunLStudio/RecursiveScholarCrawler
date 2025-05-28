@@ -1,0 +1,5 @@
+pymupdf
+openai
+beautifulsoup4
+requests
+PyPDF2
