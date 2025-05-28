@@ -69,7 +69,7 @@ def main():
     parser.add_argument('--api-key', default="EMPTY", help='API key for the LLM service')
     parser.add_argument('--model', required=True, help='LLM model name')
     parser.add_argument('--max-depth', type=int, default=-1, help='Maximum recursion depth (-1 for unlimited)')
-    parser.add_argument('--max-workers', type=int, default=5, help='Maximum number of parallel workers')
+    parser.add_argument('--max-workers', type=int, default=8, help='Maximum number of parallel workers')
     parser.add_argument('--text-ratio', default=None, help='Text extraction ratio as "head,tail" (e.g., "10,30" for first 10% and last 30%)')
     parser.add_argument('--temperature', type=float, help='LLM temperature parameter')
     parser.add_argument('--top-p', type=float, help='LLM top-p parameter')

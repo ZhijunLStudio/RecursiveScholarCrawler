@@ -4,3 +4,5 @@ src/__pycache__
 paper_crawler.log
 command.txt
 *.log
+output-v3
+*.txt
