@@ -1,4 +1,4 @@
-# llm_service.py - LLM API interface with metrics tracking
+# src/llm_service.py - LLM API interface with metrics tracking
 
 import json
 import re
@@ -6,8 +6,8 @@ import logging
 import time
 import datetime
 from openai import OpenAI
-from config import DEFAULT_PROMPT
-from utils import get_timestamp_str
+from src.config import DEFAULT_PROMPT
+from src.utils import get_timestamp_str
 
 logger = logging.getLogger(__name__)
 
@@ -129,5 +129,5 @@ class LLMService:
                     pass
             
             # All attempts failed
-            logger.error(f"Failed to parse LLM response as JSON: {response_text[:300]}…")
+            logger.error(f"Failed to parse LLM response as JSON: {response_text[:300]}...")
             return {}
