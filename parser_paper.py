@@ -78,8 +78,9 @@ class PaperParser:
         # Directory mapping for organization
         self.dir_mapping = {}
         
-        # Failed downloads for retry
+        # Failed and completed downloads
         self.failed_downloads = []
+        self.completed_downloads = []
         
     def signal_handler(self, sig, frame):
         """Handle interrupt signals, save state before exiting"""
@@ -120,14 +121,28 @@ class PaperParser:
         # Initialize download queue
         self.download_queue = load_json(paths["download_queue_file"], [])
         
-        # Initialize download results
+        # Initialize download results and identify failed downloads for retry
         self.download_results = load_json(paths["download_results_file"], [])
-        
-        # Load failed downloads
         self.failed_downloads = [item for item in self.download_results if item.get('download_success') is False]
+        self.completed_downloads = [item for item in self.download_results if item.get('download_success') is True]
         
         # Load processing state
         self.load_processing_state()
+        
+        # Calculate pending downloads - items in queue but not in results
+        self._update_pending_downloads()
+        
+    def _update_pending_downloads(self):
+        """Update the list of pending downloads from queue"""
+        # Find DOIs that are in download queue but not in results
+        queue_dois = set([item.get('doi') for item in self.download_queue if item.get('doi')])
+        result_dois = set([item.get('doi') for item in self.download_results])
+        
+        # Identify pending downloads
+        self.pending_downloads = [
+            item for item in self.download_queue 
+            if item.get('doi') and item.get('doi') not in result_dois and item.get('doi_lookup_status') == 'success'
+        ]
         
     def load_processing_state(self):
         """Load processing state from previous interrupted run"""
@@ -458,6 +473,11 @@ class PaperParser:
             title = item["title"]
             logger.info(f"[{i+1}/{len(pending_lookups)}] Looking up DOI for: {title}")
             
+            # Skip if already has DOI
+            if item.get("doi"):
+                item["doi_lookup_status"] = "success"
+                continue
+                
             # Query CrossRef API
             result = get_doi_from_title(title)
             
@@ -483,6 +503,9 @@ class PaperParser:
             if i < len(pending_lookups) - 1:
                 time.sleep(2)  # Respect API rate limits
         
+        # Update pending downloads after DOI lookup
+        self._update_pending_downloads()
+        
         # Final save
         self.save_state()
         
@@ -490,12 +513,13 @@ class PaperParser:
         success_count = sum(1 for item in pending_lookups if item["doi_lookup_status"] == "success")
         logger.info(f"DOI lookup complete: {success_count}/{len(pending_lookups)} successful")
                 
-    def download_papers_from_queue(self):
-        """Download papers that have DOIs from the download queue"""
-        # Filter items with successful DOI lookup that haven't been downloaded
-        to_download = [item for item in self.download_queue 
-                      if item.get("doi") and item.get("download_status") != "complete" 
-                      and item.get("doi_lookup_status") == "success"]
+    def download_papers_from_queue(self, batch_size=20, batch_delay=300):
+        """Download papers that have DOIs from the download queue in batches"""
+        # Update pending downloads
+        self._update_pending_downloads()
+        
+        # Filter items with successful DOI lookup that haven't been downloaded yet
+        to_download = self.pending_downloads
         
         if not to_download:
             logger.info("No papers to download")
@@ -503,61 +527,87 @@ class PaperParser:
         
         logger.info(f"Downloading {len(to_download)} papers")
         
-        for i, item in enumerate(to_download):
-            doi = item["doi"]
-            title = item["title"]
-            source_pdf = item.get("source_pdf", "")
+        # Process in batches to avoid overloading
+        for batch_idx in range(0, len(to_download), batch_size):
+            batch = to_download[batch_idx:batch_idx+batch_size]
+            logger.info(f"Processing batch {batch_idx//batch_size + 1}/{(len(to_download)+batch_size-1)//batch_size} ({len(batch)} papers)")
             
-            # Get appropriate download directory based on source paper
-            download_dir = self.get_download_dir(source_pdf)
-            
-            logger.info(f"[{i+1}/{len(to_download)}] Downloading: {title} (DOI: {doi})")
-            item["download_attempt_time"] = get_timestamp_str()
-            
-            try:
-                # Download from SciHub
-                success, local_path = download_from_scihub(doi, str(download_dir), delay=self.download_delay)
+            for i, item in enumerate(batch):
+                doi = item["doi"]
+                title = item["title"]
+                source_pdf = item.get("source_pdf", "")
                 
-                # Update item with download information
-                item["download_status"] = "complete" if success else "failed"
-                item["download_success"] = success
-                item["download_time"] = get_timestamp_str()
+                # Get appropriate download directory based on source paper
+                download_dir = self.get_download_dir(source_pdf)
                 
-                if success and local_path:
-                    item["local_path"] = local_path
-                    logger.info(f"✓ Successfully downloaded paper to {local_path}")
-                    self.update_stats("downloaded_papers")
+                logger.info(f"[{i+1}/{len(batch)}] Downloading: {title} (DOI: {doi})")
+                item["download_attempt_time"] = get_timestamp_str()
+                
+                try:
+                    # Download from SciHub with random mirror selection
+                    success, local_path, error = download_from_scihub(doi, str(download_dir), delay=self.download_delay)
                     
-                    # Add to download results
-                    self.download_results.append(item.copy())
+                    # Update item with download information
+                    item["download_status"] = "complete" if success else "failed"
+                    item["download_success"] = success
+                    item["download_time"] = get_timestamp_str()
                     
-                    # If we're not at max depth, add to processing queue for next depth
-                    if self.max_depth < 0 or item["target_depth"] <= self.max_depth:
-                        self.process_paper(local_path, item["target_depth"])
-                else:
-                    logger.warning(f"✗ Failed to download paper")
+                    if success and local_path:
+                        item["local_path"] = local_path
+                        logger.info(f"✓ Successfully downloaded paper to {local_path}")
+                        self.update_stats("downloaded_papers")
+                        
+                        # Add to successful downloads
+                        self.completed_downloads.append(item.copy())
+                        
+                        # Add to download results
+                        self.download_results.append(item.copy())
+                        
+                        # If we're not at max depth, add to processing queue for next depth
+                        if self.max_depth < 0 or item["target_depth"] <= self.max_depth:
+                            # Process downloaded paper (may run in parallel during next phase)
+                            self.pending_recursive_papers.append({
+                                "path": local_path,
+                                "depth": item["target_depth"]
+                            })
+                    else:
+                        logger.warning(f"✗ Failed to download paper: {error}")
+                        item["error_message"] = error
+                        self.update_stats("download_failures")
+                        self.failed_downloads.append(item.copy())
+                        self.download_results.append(item.copy())
+                
+                except Exception as e:
+                    logger.error(f"Error downloading paper: {e}")
+                    item["download_status"] = "error"
+                    item["download_error"] = str(e)
                     self.update_stats("download_failures")
                     self.failed_downloads.append(item.copy())
-            
-            except Exception as e:
-                logger.error(f"Error downloading paper: {e}")
-                item["download_status"] = "error"
-                item["download_error"] = str(e)
-                self.update_stats("download_failures")
-                self.failed_downloads.append(item.copy())
-            
-            # Save state periodically
-            if (i + 1) % 2 == 0:
-                self.save_state()
+                    self.download_results.append(item.copy())
                 
-            # Add delay between downloads
-            if i < len(to_download) - 1:
-                time.sleep(self.download_delay)
-                
+                # Save state periodically
+                if (i + 1) % 2 == 0:
+                    self.save_state()
+                    
+                # Add delay between downloads within batch
+                if i < len(batch) - 1:
+                    time.sleep(self.download_delay)
+            
+            # Save state after each batch
+            self.save_state()
+            
+            # Add delay between batches if there are more batches to process
+            if batch_idx + batch_size < len(to_download):
+                logger.info(f"Batch complete, pausing for {batch_delay//60} minutes before next batch...")
+                time.sleep(batch_delay)
+        
+        # Update pending downloads
+        self._update_pending_downloads()
+        
         # Final save
         self.save_state()
         
-        # Count successes
+        # Count successes from this run
         success_count = sum(1 for item in to_download if item.get("download_success", False))
         logger.info(f"Download complete: {success_count}/{len(to_download)} successful")
     
@@ -571,6 +621,9 @@ class PaperParser:
             logger.info("Max depth is 0, skipping references processing")
             return
         
+        # Initialize tracker for papers to recursively process
+        self.pending_recursive_papers = []
+        
         # Lookup DOIs for references in queue
         self.lookup_doi_for_queue()
         
@@ -582,16 +635,75 @@ class PaperParser:
             logger.info(f"Retrying {len(self.failed_downloads)} failed downloads...")
             # Get download directory
             download_dir = self.get_download_dir()
-            still_failed = retry_failed_downloads(self.failed_downloads, str(download_dir), delay=self.download_delay)
+            still_failed, newly_successful = retry_failed_downloads(
+                self.failed_downloads, 
+                str(download_dir), 
+                delay=self.download_delay
+            )
+            
+            # Update stats and lists
             self.failed_downloads = still_failed
+            
+            # Update download results with newly successful items
+            for item in newly_successful:
+                # Add to successful downloads
+                self.completed_downloads.append(item)
+                # Add to pending recursive processing
+                if self.max_depth < 0 or item["target_depth"] <= self.max_depth:
+                    self.pending_recursive_papers.append({
+                        "path": item["local_path"],
+                        "depth": item["target_depth"]
+                    })
+                    
+            # Update stats
+            self.update_stats("downloaded_papers", len(newly_successful))
+            self.update_stats("download_failures", -len(newly_successful))
+            
             self.save_state()
+            
+        # Process downloaded papers recursively
+        if self.pending_recursive_papers:
+            logger.info(f"Processing {len(self.pending_recursive_papers)} downloaded reference papers")
+            
+            with ThreadPoolExecutor(max_workers=workers) as executor:
+                futures = [
+                    executor.submit(
+                        self.process_paper, 
+                        item["path"], 
+                        item["depth"]
+                    ) for item in self.pending_recursive_papers
+                ]
+                
+                # Wait for all to complete
+                for i, future in enumerate(futures):
+                    try:
+                        result = future.result()
+                        logger.info(f"Completed recursive paper [{i+1}/{len(futures)}]: {result.get('title', 'Unknown')}")
+                    except Exception as e:
+                        logger.error(f"Error in recursive paper processing: {e}")
+            
+            # Now recursively process newly found references
+            logger.info("Starting recursive reference processing")
+            self.process_references(workers)
     
     def process_all_papers(self, subdir=None):
         """Process all pending papers in parallel."""
         pending_files = self.scan_input_directory(subdir)
         
         if not pending_files:
-            logger.info("No new papers to process")
+            # Check if we have pending downloads that need to be processed
+            if self.pending_downloads:
+                logger.info(f"No new papers to process, but found {len(self.pending_downloads)} pending downloads")
+                self.process_references()
+                return
+            
+            # Check for failed downloads that could be retried
+            if self.failed_downloads:
+                logger.info(f"No new papers to process, but found {len(self.failed_downloads)} failed downloads to retry")
+                self.retry_failed_downloads_only()
+                return
+                
+            logger.info("No new papers to process and no pending downloads")
             return
         
         logger.info(f"Starting processing of {len(pending_files)} papers with {self.max_workers} workers")
@@ -652,19 +764,51 @@ class PaperParser:
             
         logger.info(f"Retrying {len(self.failed_downloads)} failed downloads...")
         download_dir = self.get_download_dir()
-        still_failed = retry_failed_downloads(self.failed_downloads, str(download_dir), 
-                                             delay=self.download_delay, max_retries=5)
+        still_failed, newly_successful = retry_failed_downloads(
+            self.failed_downloads, 
+            str(download_dir), 
+            delay=self.download_delay, 
+            max_retries=5
+        )
                                              
         # Update stats
-        newly_successful = len(self.failed_downloads) - len(still_failed)
-        if newly_successful > 0:
-            self.update_stats("downloaded_papers", newly_successful)
-            self.update_stats("download_failures", -newly_successful)
+        newly_successful_count = len(newly_successful)
+        if newly_successful_count > 0:
+            self.update_stats("downloaded_papers", newly_successful_count)
+            self.update_stats("download_failures", -newly_successful_count)
             
+            # Add newly successful downloads to pending recursive papers
+            pending_recursive = []
+            for item in newly_successful:
+                if self.max_depth < 0 or item["target_depth"] <= self.max_depth:
+                    pending_recursive.append({
+                        "path": item["local_path"],
+                        "depth": item["target_depth"]
+                    })
+            
+            # Update download results to reflect successful retries
+            for item in self.download_results:
+                for success in newly_successful:
+                    if item.get("doi") == success.get("doi"):
+                        item.update({
+                            "download_success": True,
+                            "download_status": "complete",
+                            "local_path": success.get("local_path"),
+                            "retry_success": True,
+                            "retry_time": success.get("retry_time")
+                        })
+            
+            # Process newly downloaded papers if any
+            if pending_recursive:
+                logger.info(f"Processing {len(pending_recursive)} newly downloaded papers")
+                for item in pending_recursive:
+                    self.process_paper(item["path"], item["depth"])
+        
+        # Update failed downloads list
         self.failed_downloads = still_failed
         self.save_state()
         
-        logger.info(f"Retry complete: {newly_successful} succeeded, {len(still_failed)} still failed")
+        logger.info(f"Retry complete: {newly_successful_count} succeeded, {len(still_failed)} still failed")
 
 def validate_api_url(url):
     """Validate and fix API URL if needed."""
@@ -693,7 +837,7 @@ def main():
     parser.add_argument('--api-base', required=True, help='LLM API base URL')
     parser.add_argument('--api-key', default="EMPTY", help='API key for the LLM service')
     parser.add_argument('--model', required=True, help='LLM model name')
-    parser.add_argument('--max-workers', type=int, default=8, help='Maximum number of parallel workers')
+    parser.add_argument('--max-workers', type=int, default=4, help='Maximum number of parallel workers')
     parser.add_argument('--max-depth', type=int, default=-1, help='Maximum recursion depth (-1 for unlimited)')
     parser.add_argument('--text-ratio', default=None, help='Text extraction ratio as "head,tail" (e.g., "10,30")')
     parser.add_argument('--save-interval', type=int, default=30, help='Auto-save interval in seconds')
@@ -705,11 +849,18 @@ def main():
     parser.add_argument('--max-tokens', type=int, help='LLM max tokens parameter')
     parser.add_argument('--subdir', default=None, help='Optional subdirectory to process within input directory')
     parser.add_argument('--retry-downloads', action='store_true', help='Only retry failed downloads')
+    parser.add_argument('--batch-size', type=int, default=20, help='Number of papers to download in each batch')
+    parser.add_argument('--batch-delay', type=int, default=300, help='Delay between download batches in seconds')
     
     args = parser.parse_args()
     
     # Most important: configure paths before any other operations
-    config.configure_paths(args.input_dir, args.output_dir, args.subdir)
+    if args.subdir:
+        # When using subdir, we need to configure output with correct subdirectory
+        config.configure_paths(args.input_dir, args.output_dir, args.subdir)
+    else:
+        config.configure_paths(args.input_dir, args.output_dir)
+        
     paths = config.get_configured_paths()
     logger.info(f"Configured paths: Input={paths['input_dir']}, Output={paths['output_dir']}")
     
