@@ -1,4 +1,4 @@
-# utils.py - Shared utility functions
+# src/utils.py - Shared utility functions
 
 import json
 import logging

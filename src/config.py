@@ -1,14 +1,15 @@
-# config.py - 动态设置路径配置
+# src/config.py - Dynamic path configuration
 
 import os
 from pathlib import Path
 
-# 用于存储实际路径的变量 - 将从命令行参数设置
+# Variables to store actual paths - will be set from command line args
 INPUT_DIR = None
 OUTPUT_DIR = None
 DOWNLOAD_DIR = None
+SUBDIR = None
 
-# 状态文件路径 - 将在设置输出目录时更新
+# State file paths - will be updated when output directory is set
 PAPER_DETAILS_FILE = None
 STATS_FILE = None
 DOWNLOAD_QUEUE_FILE = None
@@ -16,35 +17,51 @@ DOWNLOAD_RESULTS_FILE = None
 PROGRESS_FILE = None
 PROCESSING_STATE_FILE = None
 
-# 初始化状态 - 尚未配置
+# Initialization status - not yet configured
 PATHS_CONFIGURED = False
 
-def configure_paths(input_dir, output_dir):
-    """配置所有路径 - 必须在使用任何路径前调用"""
-    global INPUT_DIR, OUTPUT_DIR, DOWNLOAD_DIR
+def configure_paths(input_dir, output_dir, subdir=None):
+    """Configure all paths - must be called before using any paths"""
+    global INPUT_DIR, OUTPUT_DIR, DOWNLOAD_DIR, SUBDIR
     global PAPER_DETAILS_FILE, STATS_FILE, DOWNLOAD_QUEUE_FILE, DOWNLOAD_RESULTS_FILE
     global PROGRESS_FILE, PROCESSING_STATE_FILE, PATHS_CONFIGURED
     
-    # 设置主要目录
-    INPUT_DIR = input_dir
-    OUTPUT_DIR = output_dir
-    DOWNLOAD_DIR = str(Path(output_dir) / "downloads")
+    # Set main directories
+    INPUT_DIR = Path(input_dir)
+    OUTPUT_DIR = Path(output_dir)
+    SUBDIR = subdir
     
-    # 确保目录存在 - 只处理非空路径
-    if INPUT_DIR:  # 检查输入目录是否为空
-        os.makedirs(INPUT_DIR, exist_ok=True)
+    # If subdir is specified, adjust input and output paths
+    if subdir:
+        input_subdir = INPUT_DIR / subdir
+        output_subdir = OUTPUT_DIR / subdir
+        # Use subdir for actual processing
+        if input_subdir.exists():
+            # For output, we create the same subdirectory structure
+            output_subdir.mkdir(parents=True, exist_ok=True)
+            DOWNLOAD_DIR = str(output_subdir / "downloads")
+        else:
+            raise ValueError(f"Specified subdirectory {subdir} not found in {INPUT_DIR}")
+    else:
+        DOWNLOAD_DIR = str(OUTPUT_DIR / "downloads")
+    
+    # Ensure directories exist
+    os.makedirs(INPUT_DIR, exist_ok=True)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     
-    # 设置文件路径
-    PAPER_DETAILS_FILE = str(Path(OUTPUT_DIR) / "paper_details.json")
-    STATS_FILE = str(Path(OUTPUT_DIR) / "crawler_stats.json")
-    DOWNLOAD_QUEUE_FILE = str(Path(OUTPUT_DIR) / "download_queue.json")
-    DOWNLOAD_RESULTS_FILE = str(Path(OUTPUT_DIR) / "download_results.json")
-    PROGRESS_FILE = str(Path(OUTPUT_DIR) / "processing_progress.json")
-    PROCESSING_STATE_FILE = str(Path(OUTPUT_DIR) / "processing_state.json")
+    actual_output_dir = output_subdir if subdir else OUTPUT_DIR
     
-    # 标记为已配置
+    PAPER_DETAILS_FILE = str(Path(actual_output_dir) / "paper_details.json")
+    STATS_FILE = str(Path(actual_output_dir) / "crawler_stats.json")
+    DOWNLOAD_QUEUE_FILE = str(Path(actual_output_dir) / "download_queue.json")
+    DOWNLOAD_RESULTS_FILE = str(Path(actual_output_dir) / "download_results.json")
+    PROGRESS_FILE = str(Path(actual_output_dir) / "processing_progress.json")
+    PROCESSING_STATE_FILE = str(Path(actual_output_dir) / "processing_state.json")
+    
+
+    
+    # Mark as configured
     PATHS_CONFIGURED = True
     
     return {
@@ -59,19 +76,19 @@ def configure_paths(input_dir, output_dir):
         "processing_state_file": PROCESSING_STATE_FILE
     }
 
-# 确保路径已配置的装饰器
+# Decorator to ensure paths are configured
 def requires_configured_paths(func):
-    """装饰器，确保在访问路径前已配置路径"""
+    """Decorator to ensure paths are configured before access"""
     def wrapper(*args, **kwargs):
         if not PATHS_CONFIGURED:
-            raise RuntimeError("必须先调用 configure_paths() 设置路径后才能访问")
+            raise RuntimeError("Must call configure_paths() to set paths before access")
         return func(*args, **kwargs)
     return wrapper
 
-# 检查路径配置状态
+# Check path configuration status
 @requires_configured_paths
 def get_configured_paths():
-    """获取当前配置的所有路径"""
+    """Get all currently configured paths"""
     return {
         "input_dir": INPUT_DIR,
         "output_dir": OUTPUT_DIR,
@@ -84,7 +101,7 @@ def get_configured_paths():
         "processing_state_file": PROCESSING_STATE_FILE
     }
 
-# 默认LLM提示词保持不变
+# Default LLM prompt remains unchanged
 DEFAULT_PROMPT = """
 Extract the following information from this academic paper as JSON:
 
