@@ -35,23 +35,27 @@ def configure_paths(input_dir, output_dir, subdir=None):
     if subdir:
         input_subdir = INPUT_DIR / subdir
         output_subdir = OUTPUT_DIR / subdir
+        
         # Use subdir for actual processing
         if input_subdir.exists():
             # For output, we create the same subdirectory structure
             output_subdir.mkdir(parents=True, exist_ok=True)
+            
+            # Use the subdirectory as our actual output location
+            actual_output_dir = output_subdir
             DOWNLOAD_DIR = str(output_subdir / "downloads")
         else:
             raise ValueError(f"Specified subdirectory {subdir} not found in {INPUT_DIR}")
     else:
+        actual_output_dir = OUTPUT_DIR
         DOWNLOAD_DIR = str(OUTPUT_DIR / "downloads")
     
     # Ensure directories exist
     os.makedirs(INPUT_DIR, exist_ok=True)
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(actual_output_dir, exist_ok=True)
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     
-    actual_output_dir = output_subdir if subdir else OUTPUT_DIR
-    
+    # Set file paths using the actual output directory
     PAPER_DETAILS_FILE = str(Path(actual_output_dir) / "paper_details.json")
     STATS_FILE = str(Path(actual_output_dir) / "crawler_stats.json")
     DOWNLOAD_QUEUE_FILE = str(Path(actual_output_dir) / "download_queue.json")
@@ -59,14 +63,12 @@ def configure_paths(input_dir, output_dir, subdir=None):
     PROGRESS_FILE = str(Path(actual_output_dir) / "processing_progress.json")
     PROCESSING_STATE_FILE = str(Path(actual_output_dir) / "processing_state.json")
     
-
-    
     # Mark as configured
     PATHS_CONFIGURED = True
     
     return {
         "input_dir": INPUT_DIR,
-        "output_dir": OUTPUT_DIR,
+        "output_dir": actual_output_dir,
         "download_dir": DOWNLOAD_DIR,
         "paper_details_file": PAPER_DETAILS_FILE,
         "stats_file": STATS_FILE,

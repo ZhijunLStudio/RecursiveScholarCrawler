@@ -12,8 +12,21 @@ import urllib.parse
 
 logger = logging.getLogger(__name__)
 
-# Available SciHub mirror URLs
+# 更新为扩展的Sci-Hub镜像列表
 SCIHUB_MIRRORS = [
+    "https://www.sci-hub.cat",
+    "https://www.sci-hub.ren",
+    "https://www.sci-hub.st",
+    "https://www.sci-hub.se",
+    "https://www.sci-hub.ru",
+    "https://www.sci-hub.ee",
+    "https://www.sci-hub.in", 
+    "https://www.sci-hub.vg",
+    "https://www.sci-hub.al",
+    "https://www.pismin.com",
+    "https://www.tesble.com",
+    "https://www.wellesu.com",
+    "https://sci-hub.usualwant.com",
     "https://www.sci-hub.ru",
     "https://sci-hub.se",
     "https://sci-hub.ee", 
@@ -24,11 +37,26 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_5_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36 Edg/91.0.864.71"
 ]
 
 def get_random_user_agent():
     """Return a random user agent string"""
     return random.choice(USER_AGENTS)
+
+def get_random_mirrors(exclude=None, count=None):
+    """Return a randomized list of mirrors, optionally excluding some"""
+    available = SCIHUB_MIRRORS.copy()
+    if exclude:
+        available = [m for m in available if m not in exclude]
+        
+    random.shuffle(available)
+    if count and count < len(available):
+        return available[:count]
+    return available
 
 def clean_filename(title, doi):
     """Generate a suitable filename from title and DOI"""
@@ -126,19 +154,31 @@ def find_pdf_link(html_content, base_url):
         logger.error(f"Error parsing HTML: {e}")
         return None
 
-def download_from_scihub(doi, output_dir, use_mirror=None, delay=3):
-    """Download paper with given DOI from SciHub"""
+def download_from_scihub(doi, output_dir, delay=3, max_mirrors=5):
+    """Download paper with given DOI from SciHub using random mirrors"""
     if not doi:
         logger.error("Error: DOI is required")
-        return False, None
+        return False, None, None
     
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
-    # Determine mirrors to use
-    mirrors = [use_mirror] if use_mirror else SCIHUB_MIRRORS
+    # Get random mirrors, limit to max_mirrors to avoid excessive tries
+    tried_mirrors = []
+    success = False
+    output_path = None
+    error_message = "Failed with all mirrors"
     
-    for mirror in mirrors:
+    # 尝试随机选择的镜像，如果失败则继续尝试其他镜像
+    while len(tried_mirrors) < min(max_mirrors, len(SCIHUB_MIRRORS)):
+        # 随机选择一个未尝试过的镜像
+        available_mirrors = get_random_mirrors(exclude=tried_mirrors, count=1)
+        if not available_mirrors:
+            break
+            
+        mirror = available_mirrors[0]
+        tried_mirrors.append(mirror)
+        
         try:
             # Build SciHub URL
             url = f"{mirror}/{doi}"
@@ -158,6 +198,8 @@ def download_from_scihub(doi, output_dir, use_mirror=None, delay=3):
             
             if response.status_code != 200:
                 logger.warning(f"Cannot access {mirror}, status: {response.status_code}")
+                error_message = f"HTTP error {response.status_code} with {mirror}"
+                time.sleep(1)  # Brief pause before trying next mirror
                 continue
             
             # Extract PDF download link
@@ -165,6 +207,8 @@ def download_from_scihub(doi, output_dir, use_mirror=None, delay=3):
             
             if not pdf_link:
                 logger.warning(f"PDF download link not found on {mirror}")
+                error_message = f"No PDF link found on {mirror}"
+                time.sleep(1)  # Brief pause before trying next mirror
                 continue
             
             logger.info(f"Found PDF link: {pdf_link}")
@@ -204,21 +248,30 @@ def download_from_scihub(doi, output_dir, use_mirror=None, delay=3):
                     with open(output_path, 'r', encoding='utf-8', errors='ignore') as f:
                         content = f.read(500)
                         logger.warning(f"File content preview: {content}")
-                    return False, None
+                    error_message = f"Downloaded file too small ({file_size} bytes)"
+                    os.remove(output_path)  # Remove invalid file
+                    time.sleep(1)  # Brief pause before trying next mirror
+                    continue
                 
                 logger.info(f"✓ Successfully downloaded paper! ({file_size} bytes)")
-                return True, output_path
+                success = True
+                break  # Successfully downloaded, exit the loop
             else:
                 logger.warning(f"Failed to download PDF, status: {pdf_response.status_code}")
+                error_message = f"PDF download failed with status {pdf_response.status_code}"
+                time.sleep(1)  # Brief pause before trying next mirror
         
         except Exception as e:
             logger.error(f"Error downloading from {mirror}: {e}")
+            error_message = f"Error with {mirror}: {str(e)}"
+            time.sleep(1)  # Brief pause before trying next mirror
         
-        # Add delay to avoid blocking
-        time.sleep(delay)
-    
-    logger.error("❌ All mirrors failed")
-    return False, None
+    # All mirrors tried or success
+    if success:
+        return True, output_path, None
+    else:
+        logger.error(f"❌ All mirrors failed: {error_message}")
+        return False, None, error_message
 
 def retry_failed_downloads(failed_queue, output_dir, delay=5, max_retries=3):
     """Retry downloading papers that failed initially"""
@@ -228,6 +281,7 @@ def retry_failed_downloads(failed_queue, output_dir, delay=5, max_retries=3):
     
     logger.info(f"Retrying {len(failed_queue)} failed downloads...")
     still_failed = []
+    successful = []
     
     for i, item in enumerate(failed_queue):
         doi = item.get('doi')
@@ -236,20 +290,28 @@ def retry_failed_downloads(failed_queue, output_dir, delay=5, max_retries=3):
         
         if retry_count > max_retries:
             logger.warning(f"Exceeded max retries for {title}, skipping")
+            item['retry_count'] = retry_count
             still_failed.append(item)
             continue
             
         logger.info(f"Retry {retry_count}/{max_retries} for [{i+1}/{len(failed_queue)}]: {title} (DOI: {doi})")
         
         if doi:
-            success, path = download_from_scihub(doi, output_dir, delay=delay)
+            success, path, error = download_from_scihub(doi, output_dir, delay=delay)
             if success:
                 item['download_success'] = True
                 item['local_path'] = path
+                item['download_status'] = 'complete'
+                item['retry_count'] = retry_count
+                item['retry_time'] = time.strftime('%Y-%m-%d %H:%M:%S')
                 logger.info(f"Successfully downloaded on retry {retry_count}")
+                successful.append(item)
             else:
                 item['download_success'] = False
+                item['download_status'] = 'failed'
                 item['retry_count'] = retry_count
+                item['retry_time'] = time.strftime('%Y-%m-%d %H:%M:%S')
+                item['error_message'] = error
                 still_failed.append(item)
                 logger.warning(f"Download failed again on retry {retry_count}")
         else:
@@ -261,4 +323,4 @@ def retry_failed_downloads(failed_queue, output_dir, delay=5, max_retries=3):
         if i < len(failed_queue) - 1:
             time.sleep(delay)
     
-    return still_failed
+    return still_failed, successful

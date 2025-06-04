@@ -5,6 +5,7 @@ import argparse
 import logging
 import json
 import os
+import time
 from pathlib import Path
 from src.paper_downloader import retry_failed_downloads
 
@@ -54,7 +55,7 @@ def main():
     logger.info(f"Found {len(failed_downloads)} failed downloads to retry")
     
     # Retry downloads
-    still_failed = retry_failed_downloads(
+    still_failed, successful = retry_failed_downloads(
         failed_downloads,
         str(download_dir),
         delay=args.delay,
@@ -64,11 +65,17 @@ def main():
     # Update download results with retry information
     for item in download_results:
         # For each item that was failed but now succeeded, update its status
-        if (item.get('download_success') is False and 
-            item.get('doi') and 
-            not any(f.get('doi') == item.get('doi') for f in still_failed)):
-            item['download_success'] = True
-            item['download_retry_success'] = True
+        for success in successful:
+            if (item.get('download_success') is False and 
+                item.get('doi') == success.get('doi')):
+                item.update({
+                    'download_success': True,
+                    'download_status': 'complete',
+                    'local_path': success.get('local_path'),
+                    'retry_count': success.get('retry_count'),
+                    'retry_time': success.get('retry_time'),
+                    'retry_success': True
+                })
     
     # Save updated results
     with open(download_results_file, 'w', encoding='utf-8') as f:
@@ -88,7 +95,7 @@ def main():
                     f.write(f"{item['doi']}\n")
     
     # Print summary
-    success_count = len(failed_downloads) - len(still_failed)
+    success_count = len(successful)
     logger.info("=" * 50)
     logger.info(f"Retry complete: {success_count} out of {len(failed_downloads)} papers successfully downloaded")
     logger.info(f"Still failed: {len(still_failed)}")
