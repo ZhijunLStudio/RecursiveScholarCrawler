@@ -30,8 +30,9 @@ def configure_paths(input_dir, output_dir):
     OUTPUT_DIR = output_dir
     DOWNLOAD_DIR = str(Path(output_dir) / "downloads")
     
-    # 确保目录存在
-    os.makedirs(INPUT_DIR, exist_ok=True)
+    # 确保目录存在 - 只处理非空路径
+    if INPUT_DIR:  # 检查输入目录是否为空
+        os.makedirs(INPUT_DIR, exist_ok=True)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     
