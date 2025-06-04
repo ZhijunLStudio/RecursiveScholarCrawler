@@ -693,7 +693,7 @@ def main():
     parser.add_argument('--api-base', required=True, help='LLM API base URL')
     parser.add_argument('--api-key', default="EMPTY", help='API key for the LLM service')
     parser.add_argument('--model', required=True, help='LLM model name')
-    parser.add_argument('--max-workers', type=int, default=4, help='Maximum number of parallel workers')
+    parser.add_argument('--max-workers', type=int, default=8, help='Maximum number of parallel workers')
     parser.add_argument('--max-depth', type=int, default=-1, help='Maximum recursion depth (-1 for unlimited)')
     parser.add_argument('--text-ratio', default=None, help='Text extraction ratio as "head,tail" (e.g., "10,30")')
     parser.add_argument('--save-interval', type=int, default=30, help='Auto-save interval in seconds')
