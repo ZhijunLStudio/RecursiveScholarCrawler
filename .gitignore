@@ -1,10 +1,10 @@
-output
-paper
-src/__pycache__
+output/
+paper/
+src/__pycache__/
 paper_crawler.log
 command.txt
 *.log
-output-v3
+output-v3/
 *.txt
 __pycache__
-output-0604
+output-0604/
