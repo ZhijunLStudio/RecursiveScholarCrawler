@@ -201,23 +201,38 @@ class PaperParser:
             self.stats["last_update"] = get_timestamp_str()
     
     def map_output_directory(self, input_path):
-        """Map input path to corresponding output directory structure"""
+        logger.info(f"map_output_directory called with input_path: {input_path}")
+        logger.info(f"self.input_dir is: {self.input_dir}")
+        logger.info(f"self.output_dir is: {self.output_dir}")
+        
         input_path = Path(input_path)
-        rel_path = input_path.relative_to(self.input_dir).parent
-        output_subdir = self.output_dir / rel_path
+        if input_path.is_relative_to(self.input_dir):
+            rel_path = input_path.relative_to(self.input_dir).parent
+            output_subdir = self.output_dir / rel_path
+        elif input_path.is_relative_to(self.output_dir):
+            output_subdir = input_path.parent
+        else:
+            # 如果路径既不在输入目录也不在输出目录中，使用默认输出目录
+            logger.warning(f"Input path {input_path} is not in the input or output directory. Using default output directory.")
+            output_subdir = self.output_dir
+        
         output_subdir.mkdir(parents=True, exist_ok=True)
         return output_subdir
 
     def get_download_dir(self, source_path=None):
-        """Get appropriate download directory based on source path"""
-        if source_path:
-            source_dir = self.map_output_directory(source_path)
-            download_dir = source_dir / "downloads"
-        else:
-            download_dir = self.output_dir / "downloads"
+        logger.info(f"get_download_dir called with source_path: {source_path}")
+        logger.info(f"self.input_dir is: {self.input_dir}")
+        logger.info(f"self.output_dir is: {self.output_dir}")
         
-        download_dir.mkdir(parents=True, exist_ok=True)
-        return download_dir
+        if source_path and source_path.startswith(str(self.output_dir)):
+            # 如果源路径在输出目录中，直接返回其父目录
+            return Path(source_path).parent
+        elif source_path:
+            # 如果源路径在输入目录中，映射到对应的输出目录
+            return self.map_output_directory(source_path) / "downloads"
+        else:
+            # 如果没有提供源路径，返回默认下载目录
+            return self.output_dir / "downloads"
 
     def scan_input_directory(self, subdir=None):
         """
