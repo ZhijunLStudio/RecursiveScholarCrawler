@@ -22,6 +22,8 @@ from src.llm_service import LLMService
 from src.doi_service import get_doi_from_title
 from src.paper_downloader import download_from_scihub, retry_failed_downloads
 
+from src.config import get_configured_paths
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -39,6 +41,10 @@ class PaperParser:
         self.input_dir = Path(input_dir)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+
+        paths = get_configured_paths()
+        self.download_dir = Path(paths["download_dir"])
+        self.download_dir.mkdir(parents=True, exist_ok=True)
         
         # LLM parameters
         self.api_base = api_base
@@ -233,59 +239,56 @@ class PaperParser:
         
         output_subdir.mkdir(parents=True, exist_ok=True)
         return output_subdir
-
+    
     def get_download_dir(self, source_path=None):
-        logger.debug(f"get_download_dir called with source_path: {source_path}") # Changed to debug
-        logger.debug(f"self.input_dir is: {self.input_dir}") # Changed to debug
-        logger.debug(f"self.output_dir is: {self.output_dir}") # Changed to debug
-        
-        if source_path and Path(source_path).is_relative_to(self.output_dir):
-            # 如果源路径在输出目录中，直接返回其父目录
-            return Path(source_path).parent
-        elif source_path and Path(source_path).is_relative_to(self.input_dir):
-            # 如果源路径在输入目录中，映射到对应的输出目录
-            return self.map_output_directory(source_path) / "downloads"
-        else:
-            # 如果没有提供源路径，或者源路径不在输入/输出目录中，返回默认下载目录
-            return self.output_dir / "downloads"
+        """
+        统一使用 configure_paths() 里配置的 download_dir，
+        不再在子目录里二次建 downloads，也不会再 fallback 到别处。
+        """
+        return self.download_dir
+
 
     def scan_input_directory(self, subdir=None):
         """
         Scan input directory for PDF files and update pending list.
-        If subdir is specified, only scan that subdirectory.
+        跳过全局下载目录下的 PDF，避免重复处理。
         """
+        # 确定要扫描的基础目录
         base_dir = self.input_dir
         if subdir:
             base_dir = base_dir / subdir
-            
-        pdf_files = list(base_dir.glob("**/*.pdf"))
-        
-        # Map each input file to its corresponding output directory
+
+        # 获取全局下载目录
+        paths = get_configured_paths()
+        download_dir = Path(paths["download_dir"])
+
+        # 收集所有非 download_dir 子目录下的 PDF
+        pdf_files = [
+            p for p in base_dir.glob("**/*.pdf")
+            if download_dir not in p.parents
+        ]
+
+        # 原有的映射和进度初始化逻辑保持不变，只是把 pdf_files 改为上面这个列表
         for pdf_file in pdf_files:
             rel_path = pdf_file.relative_to(self.input_dir).parent
             self.dir_mapping[str(pdf_file)] = self.output_dir / rel_path
-        
-        # First pass: get all file paths
+
         all_files = set(str(path) for path in pdf_files)
-        processed = self.progress["processed_files"] # These are already sets
-        failed = self.progress["failed_files"] # These are already sets
-        
-        # Identify new or pending files
-        # Convert to list for iteration, but add/remove from sets
+        processed = self.progress["processed_files"]
+        failed = self.progress["failed_files"]
+
         pending = list(all_files - processed - failed)
-        
-        # Check for previously interrupted files
         in_progress = [path for path in pending if path in self.current_processing]
         if in_progress:
             logger.info(f"Found {len(in_progress)} interrupted files from previous run, will prioritize")
-        
-        # Update progress tracker sets
-        self.progress["pending_files"] = set(pending) # Ensure this is a set
-        self.progress["in_progress_files"] = set(in_progress) # Ensure this is a set
+
+        self.progress["pending_files"] = set(pending)
+        self.progress["in_progress_files"] = set(in_progress)
         self.progress["total_files"] = len(all_files)
-        
+
         logger.info(f"Found {len(pending)} new/pending PDF files out of {len(all_files)} total files")
         return in_progress + [p for p in pending if p not in in_progress]
+
     
     def process_paper(self, pdf_path, current_depth=0):
         """Process a single paper using LLM and update state."""
